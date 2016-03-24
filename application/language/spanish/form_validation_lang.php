@@ -27,3 +27,4 @@ $lang['is_unique'] 			= "El campo %s debe contener un valor único.";
 
 /* End of file form_validation_lang.php */
 /* Location: ./system/language/spanish/form_validation_lang.php */
+

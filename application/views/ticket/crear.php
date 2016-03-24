@@ -2,15 +2,22 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+echo !empty($errors)? $errors : "";
+echo validation_errors();
 
-echo form_open_multipart("ticket/insertar", ["class"=>"w3-form"]);
+echo form_open_multipart("ticket/obtener", ["class"=>"w3-form"]);
 
 echo form_label("Su nombre: ","ticket-nombre");
-echo form_input(["type"=>"name", "name"=>"nombre", "id"=>"ticket-nombre", "class"=>"w3-input"]);
+echo form_input(["type"=>"name",
+                 "name"=>"nombre", "id"=>"ticket-nombre",
+                 "class"=>"w3-input w3-border"]);
 echo "<br/>";
 
 echo form_label("Su correo: ", "ticket-email");
-echo form_input(["type"=>"email","name"=>"email", "placeholder"=>"Correo corporativo (ejemplo@lagobo.com.co)", "class"=>"w3-input"]);
+echo form_input(["type"=>"email",
+                 "name"=>"email",
+                 "placeholder"=>"Correo corporativo (ejemplo@lagobo.com.co)",
+                 "class"=>"w3-input w3-border"]);
 echo "<br/>";
 
 echo form_label("Su sucursal: ","ticket-id_sucursal");
@@ -22,7 +29,10 @@ echo form_dropdown("categoria", ["Opotudata", "Aurora", "Redes", "Soluciones de 
 echo "<br/>";
 
 echo form_label("Serial del equipo: ", "observacion-id_equipo");
-echo form_input(["type"=>"text", "name"=>"id_equipo", "id"=>"observacion-id_equipo", "class"=>"w3-input"]);
+echo form_input(["type"=>"text",
+                 "name"=>"id_equipo",
+                 "id"=>"observacion-id_equipo",
+                 "class"=>"w3-input w3-border"]);
 echo "<br/>";
 
 echo form_label("Tema: ", "observacion-tema");
@@ -34,7 +44,8 @@ echo form_textarea(["rows"=>"10", "cols"=>"50", "name"=>"descripcion", "class"=>
 echo "<br/>";
 
 echo form_label("Adjuntos: ", "observacion-fotografias");
-echo "<input type='file' name='fotografias' id='observacion-fotografias' accept='image/*' class='w3-input'/>";
+echo "<input type='file' name='fotografia1' id='observacion-fotografias' accept='image/*' class='w3-input'/>";
+echo "<input type='file' name='fotografia2' id='observacion-fotografias' accept='image/*' class='w3-input'/>";
 echo "<br/>";
 
 echo $captcha['image'];
@@ -46,11 +57,8 @@ echo form_input(["type"=>"text",
                  "class"=>"w3-input"]
                 );
 echo "<br/>";
-
-echo form_error('captcha-usuario','<p style="color:#F83A18">','</p>');
 echo form_submit("envio", "Crear");
 echo form_close();
-echo validation_errors();
 
 ?>
 

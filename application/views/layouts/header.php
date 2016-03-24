@@ -20,5 +20,6 @@
 
       <nav>
          <a href='<?php echo site_url("sucursal"); ?>'>sucursal</a>
+         <a href='<?php echo site_url("ticket/crearTicket"); ?>'>Crear ticket</a>
       </nav>
 

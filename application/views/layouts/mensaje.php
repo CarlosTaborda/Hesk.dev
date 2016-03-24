@@ -1,5 +1,5 @@
 <?php $this->load->view('layouts/header',["head_files"=>[
-                                                         '<meta http-equiv="Refresh" content="5;url='. $url .'">'
+                                                         '<meta http-equiv="Refresh" content="'. $tiempo = !empty($tiempo)? $tiempo : 5 .';url='. $url .'">'
                                                          ]]) ?>
 
 
@@ -7,7 +7,7 @@
   <div class="w3-modal-content w3-card-4">
     <article class="w3-container w3-indigo">
       <span onclick="document.getElementById('id01').style.display='none'" class="w3-closebtn">&times;</span>
-      <h1 class='w3-center'><?php echo !empty($titulo)? $titulo : ""; ?></h1>
+      <h1 class='w3-center'><?php echo !empty($titulo)? $titulo : "Mensaje"; ?></h1>
     </article>
     <div class="w3-container">
       <p class='w3-center w3-xxlarge'><?php echo !empty($mensaje)? $mensaje : ""; ?></p>

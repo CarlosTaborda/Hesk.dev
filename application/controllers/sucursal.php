@@ -41,6 +41,7 @@ class Sucursal extends CI_Controller
 		   $this->Sucursal_model->insertar();
 			$this->load->view('layouts/mensaje', ['url'=>current_url(),
 			                                      'titulo'=>'Sucursal',
+			                                      'tiempo'=>11,
 			                                      "mensaje"=>'La sucursal ha sido creada']);
 		}
     }
