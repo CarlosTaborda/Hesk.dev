@@ -39,6 +39,7 @@ CREATE TABLE `equipo` (
 
 LOCK TABLES `equipo` WRITE;
 /*!40000 ALTER TABLE `equipo` DISABLE KEYS */;
+INSERT INTO `equipo` VALUES ('0','No existe equipo','Es una entrada por defecto','2016-03-01','Nadie','102');
 /*!40000 ALTER TABLE `equipo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,15 +55,15 @@ CREATE TABLE `observacion` (
   `id_ticket` int(11) NOT NULL,
   `id_equipo` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
   `tema` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mensaje` int(11) NOT NULL,
-  `fecha` date NOT NULL,
-  `fotografias` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mensaje` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fecha` datetime NOT NULL,
+  `fotografias` varchar(400) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_observacion`),
   KEY `observacion_ticket` (`id_ticket`),
   KEY `observacion_equipo` (`id_equipo`),
   CONSTRAINT `ObservacionEquipo` FOREIGN KEY (`id_equipo`) REFERENCES `equipo` (`id_equipo`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `observacion_ibfk_1` FOREIGN KEY (`id_ticket`) REFERENCES `ticket` (`id_ticket`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,6 +72,7 @@ CREATE TABLE `observacion` (
 
 LOCK TABLES `observacion` WRITE;
 /*!40000 ALTER TABLE `observacion` DISABLE KEYS */;
+INSERT INTO `observacion` VALUES (11,2050741161,'0','fdglkdgltkg','fjgkdjgijgoituhrthrth h rhyjtyjutj u','2016-03-25 17:37:58','<a href=\'http://hesk.dev/uploads/2.jpg\'>http://hesk.dev/uploads/2.jpg</a><br/><a href=\'http://hesk.dev/uploads/1.jpg\'>http://hesk.dev/uploads/1.jpg</a><br/>');
 /*!40000 ALTER TABLE `observacion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -125,6 +127,7 @@ CREATE TABLE `ticket` (
 
 LOCK TABLES `ticket` WRITE;
 /*!40000 ALTER TABLE `ticket` DISABLE KEYS */;
+INSERT INTO `ticket` VALUES (2050741161,'Carlos Felipe Aguirre','carlos@aguirre.com','nuevo','oportudata',102,'');
 /*!40000 ALTER TABLE `ticket` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,4 +167,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-24 18:45:41
+-- Dump completed on 2016-03-25 17:46:57

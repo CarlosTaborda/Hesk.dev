@@ -1,6 +1,8 @@
-<?php $this->load->view('layouts/header',["head_files"=>[
-                                                         '<meta http-equiv="Refresh" content="'. $tiempo = !empty($tiempo)? $tiempo : 5 .';url='. $url .'">'
-                                                         ]]) ?>
+<?php
+$tiempo= !empty($tiempo)? $tiempo : 5 ;
+$this->load->view('layouts/header',["head_files"=>[
+                                                   '<meta http-equiv="Refresh" content="' . $tiempo. ';url='.$url.'" />'
+                                                   ]]) ?>
 
 
 <div id="id01" class="w3-modal">

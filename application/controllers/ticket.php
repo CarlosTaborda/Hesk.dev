@@ -20,7 +20,13 @@ class Ticket extends CI_Controller
       $this->load->library('session');
       $this->load->library('form_validation');
       $this->form_validation->set_error_delimiters('<div class="w3-container w3-content"><div class="w3-half w3-display-middle   w3-card-8 w3-animate-top w3-red w3-margin-8">', '</div></div>');
+      /* CARGAR MODELOS*/
+      $this->load->model('Ticket_model');
+      $this->load->model('Observacion_model');
+
    }
+
+
 
    public function crearTicket($data= null){
          $data["id_sucursal"]=$this->crearOpciones($this->db->get("sucursal")->result_array());
@@ -49,6 +55,8 @@ class Ticket extends CI_Controller
 
      }
 
+
+
    public function obtener(){
       $_reglas=[
          [
@@ -57,7 +65,7 @@ class Ticket extends CI_Controller
             'rules'=>'min_length[5]|max_length[50]|required'
          ],
          [
-            'field'=>'email',
+            'field'=>'correo',
             'label'=>'Correo',
             'rules'=>'valid_email|required'
          ],
@@ -77,7 +85,7 @@ class Ticket extends CI_Controller
             'rules'=>'required'
          ],
          [
-            'field'=>'descripcion',
+            'field'=>'mensaje',
             'label'=>'Descripción',
             'rules'=>'required|min_length[20]|max_length[500]'
          ],
@@ -115,17 +123,51 @@ class Ticket extends CI_Controller
                $_linkImagenes[]= base_url('uploads') . '/' . $_infoArchivo['file_name'];
             }
          }
+
+         $id_ticket=abs(crc32(uniqid()));
+
+         $_datos= $this->input->post();
+
+         $_datos['id_ticket']=$id_ticket;
+         $_datos['fotografias']= !empty($_linkImagenes)? $_linkImagenes : null;
+
+         $this->sql($_datos, 'ticket', 'insertar');
+         $this->sql($_datos, 'observacion', 'insertar');
+
          $this->load->view('layouts/mensaje', [
                         "url"=>current_url(),
-                        "mensaje"=>"Su ticket ha sido creado satisfactoriamente"
+                        'tiempo'=>"7",
+                        "mensaje"=>"Su ticket ha sido creado satisfactoriamente<br/>su id de rastreo es :" . $id_ticket,
                      ]);
+
 
      }
    }
 
-   public function sql($datos){
 
+
+   public function sql($datos, $tabla, $accion){
+      switch($tabla){
+         case 'ticket':
+            switch($accion){
+               case 'insertar':
+                  $this->Ticket_model->cargar($datos)->insertar();
+               break;
+            }
+         break;
+
+
+         case "observacion":
+            switch($accion){
+               case 'insertar':
+                  $this->Observacion_model->cargar($datos)->insertar();
+               break;
+            }
+         break;
+      }
    }
+
+
 
     public function check_captcha($str){
       $word = $this->session->userdata('captchaWord');
@@ -137,6 +179,8 @@ class Ticket extends CI_Controller
         return false;
       }
    }
+
+
 
    private function crearOpciones($resultado){
       for($i=0; $i<count($resultado); $i++){
@@ -150,6 +194,33 @@ class Ticket extends CI_Controller
 
 
       return $respuesta;
+   }
+
+   public function consultar(){
+
+      $id_ticket = $this->input->post('id_ticket');
+
+      if(!empty($id_ticket)){
+         $_respuesta = $this->Ticket_model->consultar($id_ticket);
+         if(is_array($_respuesta)){
+            $this->load->view('layouts/header');
+            $this->load->view('ticket/unicaconsulta', ["ticket"=>$_respuesta]);
+            $this->load->view('layouts/footer');
+
+         }
+         else{
+            $this->load->view('layouts/mensaje',[
+                                                   "url"=>current_url(),
+                                                   "tiempo"=>5,
+                                                   "mensaje"=>$_respuesta
+            ]);
+         }
+      }
+      else{
+         $this->load->view('layouts/header');
+         $this->load->view('ticket/consulta');
+         $this->load->view('layouts/footer');
+      }
    }
 }
 
