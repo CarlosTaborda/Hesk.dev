@@ -222,5 +222,12 @@ class Ticket extends CI_Controller
          $this->load->view('layouts/footer');
       }
    }
+
+
+   public function consultarTickets(){
+      $this->load->view('layouts/header');
+      $this->load->view('ticket/formularioconsultar');
+      $this->load->view('layouts/footer');
+   }
 }
 
