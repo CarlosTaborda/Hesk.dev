@@ -12,7 +12,7 @@ $this->load->view('layouts/header',["head_files"=>[
       <h1 class='w3-center'><?php echo !empty($titulo)? $titulo : "Mensaje"; ?></h1>
     </article>
     <div class="w3-container">
-      <p class='w3-center w3-xxlarge'><?php echo !empty($mensaje)? $mensaje : ""; ?></p>
+      <p class='w3-center w3-xlarge'><?php echo !empty($mensaje)? $mensaje : ""; ?></p>
     </div>
     <article class="w3-container w3-indigo">
       <p class='w3-center'>

@@ -22,5 +22,6 @@
          <a href='<?php echo site_url("sucursal"); ?>'>Sucursal</a>
          <a href='<?php echo site_url("ticket/crearTicket"); ?>'>Crear Ticket</a>
          <a href='<?php echo site_url("ticket/consultar"); ?>'>Consultar Ticket</a>
+         <a href='<?php echo site_url("usuario/index"); ?>'>Ingresar</a>
       </nav>
 

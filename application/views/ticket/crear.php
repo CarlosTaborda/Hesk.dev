@@ -1,11 +1,18 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
+echo "<div class='w3-center w3-margin-12 w3-animate-opacity'>";
+echo "<img src='".base_url('assets/img/ticket-icon.png')."'></img>";
+echo "</div>";
 echo !empty($errors)? $errors : "";
 echo validation_errors();
 
-echo form_open_multipart("ticket/obtener", ["class"=>"w3-form"]);
+echo form_open_multipart("ticket/obtener", [
+   "class"=>"w3-form w3-card-4 w3-border w3-content",
+   "style"=>"width: 80%"]
+);
+
+echo "<h2 class='w3-indigo w3-center'>Crear Ticket</h2>";
 
 echo form_label("Su nombre: ","ticket-nombre", ["class"=>"w3-label"]);
 echo form_input(["type"=>"name",
@@ -24,14 +31,14 @@ echo form_label("Su sucursal: ","ticket-id_sucursal", ["class"=>"w3-label"]);
 echo form_dropdown("id_sucursal", $id_sucursal,null,"id='ticket-id_sucursal' class='w3-select w3-border'");
 echo "<br/>";
 
-echo form_label("Categoría: ", "ticket-id_sucursal",["class"=>"w3-label"]);
+echo form_label("Categoría: ", "ticket-categoria",["class"=>"w3-label"]);
 echo form_dropdown("categoria", [
                                  "oportudata"=>"Opotudata",
                                  "aurora"=>"Aurora",
                                  "redes"=>"Redes",
                                  "hardware"=>"Soluciones de hardware",
                                  "otro"=>"Otro"]
-                  , "0", "id='ticket-id_sucursal' class='w3-select w3-border'");
+                  , "0", "id='ticket-categoria' class='w3-select w3-border'");
 echo "<br/>";
 
 echo form_label("Serial del equipo: ", "observacion-id_equipo", ["class"=>"w3-label"]);
@@ -73,4 +80,25 @@ echo "</div>";
 echo form_close();
 
 ?>
+<script type="text/javascript">
+$(document).ready(
+   function(){
+      $('label[for=observacion-id_equipo], #observacion-id_equipo').hide();
+      $('label[for=observacion-fotografias], input[type=file]').hide();
+      $('#ticket-categoria').on('change',
+         function(){
+            var valor = $('#ticket-categoria').val();
+            if(valor=="hardware"){
+               $('label[for=observacion-id_equipo], #observacion-id_equipo').show('2500');
+               $('label[for=observacion-fotografias], input[type=file]').show('2500');
+            }
+            else{
+               $('label[for=observacion-id_equipo], #observacion-id_equipo').hide('2500');
+               $('label[for=observacion-fotografias], input[type=file]').hide('2500');
+            }
+         }
+      );
+   }
+);
+</script>
 
