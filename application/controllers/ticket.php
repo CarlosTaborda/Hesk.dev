@@ -228,5 +228,30 @@ class Ticket extends CI_Controller
       $this->load->view('ticket/formularioconsultar');
       $this->load->view('layouts/footer');
    }
+
+   public function verTickets(){
+
+      if(!empty($this->input->post('fecha')) && $this->Ticket_model->verTickets($this->input->post())){
+         $_respuesta = $this->Ticket_model->verTickets($this->input->post());
+         $config['base_url'] = site_url('ticket/verTickets');
+         $config['total_rows'] = $_respuesta[1];
+         $config['per_page'] = 10;
+         $this->pagination->initialize($config);
+         $this->load->view('ticket/verticket', ["resultado"=>$_respuesta[0]]);
+      }
+      else{
+         $_respuesta = $this->Ticket_model->verTickets(["fecha"=>"DESC"]);
+         $config['base_url'] = site_url('ticket/verTickets');
+         $config['total_rows'] = $_respuesta[1];
+         $config['per_page'] = 10;
+         $this->pagination->initialize($config);
+         $this->load->view('ticket/verticket', ["resultado"=>$_respuesta[0]]);
+      }
+
+   }
+
+   public function borrarTicket(){
+      $this->Ticket_model->borrarTicket($this->input->post('id_ticket'));
+   }
 }
 

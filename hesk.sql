@@ -63,7 +63,7 @@ CREATE TABLE `observacion` (
   KEY `observacion_equipo` (`id_equipo`),
   CONSTRAINT `ObservacionEquipo` FOREIGN KEY (`id_equipo`) REFERENCES `equipo` (`id_equipo`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `observacion_ibfk_1` FOREIGN KEY (`id_ticket`) REFERENCES `ticket` (`id_ticket`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +72,6 @@ CREATE TABLE `observacion` (
 
 LOCK TABLES `observacion` WRITE;
 /*!40000 ALTER TABLE `observacion` DISABLE KEYS */;
-INSERT INTO `observacion` VALUES (15,1632688477,'0','fdglkdgltkg','fmesfleflekflekflekfelkfe perro','2016-03-26 16:33:39','<a href=\'http://hesk.dev/uploads/cedula.png\'>http://hesk.dev/uploads/cedula.png</a><br/><a href=\'http://hesk.dev/uploads/diploma3.jpg\'>http://hesk.dev/uploads/diploma3.jpg</a><br/>');
 /*!40000 ALTER TABLE `observacion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -127,7 +126,7 @@ CREATE TABLE `ticket` (
 
 LOCK TABLES `ticket` WRITE;
 /*!40000 ALTER TABLE `ticket` DISABLE KEYS */;
-INSERT INTO `ticket` VALUES (1418195263,'Andres Olarte','carlos.aguirre@lagobo.com.co','nuevo','oportudata',102,''),(1632688477,'Andres Olarte','carlos.aguirre@lagobo.com.co','nuevo','redes',102,'');
+INSERT INTO `ticket` VALUES (1418195263,'Andres Olarte','carlos.aguirre@lagobo.com.co','nuevo','oportudata',102,'');
 /*!40000 ALTER TABLE `ticket` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -156,7 +155,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (3,'Carlos Felipe Aguirre Taborda','carlos.aguirre@lagobo.com.co','32879f25bd72ea0ffb187d8f9bd1499b7a3ed1dd','adm','hardware redes aurora otro ',0),(4,'Carlos Felipe Aguirre Taborda','carlos.aguirre@lagobo.com.co','32879f25bd72ea0ffb187d8f9bd1499b7a3ed1dd','adm','hardware redes aurora otro ',0);
+INSERT INTO `usuario` VALUES (3,'Carlos Felipe Aguirre Taborda','carlos.aguirre@lagobo.com.co','32879f25bd72ea0ffb187d8f9bd1499b7a3ed1dd','adm','hardware redes aurora otro ',1),(4,'Carlos Felipe Aguirre Taborda','carlos.aguirre@lagobo.com.co','32879f25bd72ea0ffb187d8f9bd1499b7a3ed1dd','adm','hardware redes aurora otro ',0);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -169,4 +168,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-26 16:55:42
+-- Dump completed on 2016-03-27 21:51:15

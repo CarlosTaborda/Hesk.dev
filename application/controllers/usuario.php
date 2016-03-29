@@ -10,6 +10,7 @@ class Usuario extends CI_Controller
       $this->load->library('form_validation');
       $this->form_validation->set_error_delimiters('<div class="w3-container w3-content"><div class="w3-half w3-display-middle   w3-card-8 w3-animate-top w3-red w3-margin-8">', '</div></div>');
       $this->load->model("Usuario_model");
+      $this->load->library('../controllers/ticket');
       $this->load->library('session');
    }
 
@@ -40,7 +41,7 @@ class Usuario extends CI_Controller
       else{
          if($this->Usuario_model->comprobarUsuario($this->input->post())){
             $this->session->set_userdata($this->Usuario_model->comprobarUsuario($this->input->post()));
-            echo "estas logueado";
+            $this->ticket->verTickets();
          }
          else{
             $this->load->view('layouts/mensaje', [
@@ -95,5 +96,6 @@ class Usuario extends CI_Controller
          ]);
       }
    }
+
 }
 

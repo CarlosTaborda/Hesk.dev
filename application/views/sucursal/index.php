@@ -1,9 +1,19 @@
 <?php
+
+$usuarios_permitidos=['adm'];
+if(!$this->Usuario_model->permitirVistaUsuario($usuarios_permitidos, $this->session->all_userdata())){
+   header("Location: " . site_url('usuario/index'));
+}
+
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 echo validation_errors();
-echo form_open('sucursal/insertar');
+echo form_open('sucursal/insertar',[
+   "class"=>"w3-form w3-card-4 w3-border w3-content",
+   "style"=>"width:80%"
+]);
 
 echo form_label("Código númerico de sucursal: <br/>", "sucursal-id_sucursal", [
                                                                               "class"=>"w3-label"
@@ -27,7 +37,7 @@ echo form_input([
 echo "<br/>";
 echo "<div class='w3-center'>";
 echo form_submit("crear", "Crear", "class='w3-btn w3-indigo'");
-echo "<div>";
-form_close();
+echo "</div>";
+echo form_close();
 ?>
 

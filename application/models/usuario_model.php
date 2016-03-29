@@ -28,6 +28,8 @@ class Usuario_model extends CI_Model
        $_infoUsuario=$this->db->get('usuario')->row_array();
 
        if(!empty($_infoUsuario)){
+         $_infoUsuario['logueado']=true;
+         $this->session->set_userdata($_infoUsuario);
          return $_infoUsuario;
        }
        else{
@@ -58,6 +60,20 @@ class Usuario_model extends CI_Model
 
    public function insertar(){
       $this->db->insert('usuario', $this);
+   }
+
+   public function permitirVistaUsuario($rol, $session){
+      if($session['logueado']){
+         foreach($rol as $valor){
+            if($valor == $session['rol']){
+               return true;
+            }
+         }
+         return false;
+      }
+      else{
+         return false;
+      }
    }
 
 }
