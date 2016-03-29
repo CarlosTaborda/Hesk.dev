@@ -35,11 +35,11 @@ class Usuario extends CI_Controller
       ];
 
       $this->form_validation->set_rules($_config);
-      if ($this->form_validation->run() == false){
+      if ($this->form_validation->run() == false && !empty($this->session->userdata('logueado'))){
          $this->index();
       }
       else{
-         if($this->Usuario_model->comprobarUsuario($this->input->post())){
+         if($this->Usuario_model->comprobarUsuario($this->input->post()) || $this->session->userdata('logueado')==true ){
             $this->session->set_userdata($this->Usuario_model->comprobarUsuario($this->input->post()));
             $this->ticket->verTickets();
          }

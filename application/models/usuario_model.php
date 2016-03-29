@@ -76,5 +76,35 @@ class Usuario_model extends CI_Model
       }
    }
 
+   public function obtenerTodosCorreos(){
+      $this->db->select('nombre,correo');
+      $_resultado=$this->db->get('usuario')->result_array();
+      if($this->convertirArray($_resultado)){
+          $_filas=$this->convertirArray($_resultado);
+          for($x=0; $x<count($_filas['correo']); $x++){
+            $_correos[$_filas['correo'][$x]]=$_filas['nombre'][$x];
+          }
+          return $_correos;
+      }
+      else{
+         return false;
+      }
+
+   }
+
+   private function convertirArray($consulta){
+      if(!empty($consulta)){
+         $_columnas = array_keys($consulta[0]);
+         for($i=0; $i<count($consulta); $i++){
+            foreach($_columnas as $valor){
+               $_filas[$valor][]=$consulta[$i][$valor];
+            }
+         }
+         return $_filas;
+      }
+      else{
+         return false;
+      }
+   }
 }
 

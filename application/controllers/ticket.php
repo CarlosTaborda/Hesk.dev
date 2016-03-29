@@ -230,6 +230,7 @@ class Ticket extends CI_Controller
    }
 
    public function verTickets(){
+      $_correos=$this->Usuario_model->obtenerTodosCorreos();
 
       if(!empty($this->input->post('fecha')) && $this->Ticket_model->verTickets($this->input->post())){
          $_respuesta = $this->Ticket_model->verTickets($this->input->post());
@@ -237,7 +238,7 @@ class Ticket extends CI_Controller
          $config['total_rows'] = $_respuesta[1];
          $config['per_page'] = 10;
          $this->pagination->initialize($config);
-         $this->load->view('ticket/verticket', ["resultado"=>$_respuesta[0]]);
+         $this->load->view('ticket/verticket', ["resultado"=>$_respuesta[0], "correos"=>$_correos]);
       }
       else{
          $_respuesta = $this->Ticket_model->verTickets(["fecha"=>"DESC"]);
@@ -245,7 +246,7 @@ class Ticket extends CI_Controller
          $config['total_rows'] = $_respuesta[1];
          $config['per_page'] = 10;
          $this->pagination->initialize($config);
-         $this->load->view('ticket/verticket', ["resultado"=>$_respuesta[0]]);
+         $this->load->view('ticket/verticket', ["resultado"=>$_respuesta[0], "correos"=>$_correos]);
       }
 
    }

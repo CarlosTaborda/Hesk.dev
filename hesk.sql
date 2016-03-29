@@ -63,7 +63,7 @@ CREATE TABLE `observacion` (
   KEY `observacion_equipo` (`id_equipo`),
   CONSTRAINT `ObservacionEquipo` FOREIGN KEY (`id_equipo`) REFERENCES `equipo` (`id_equipo`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `observacion_ibfk_1` FOREIGN KEY (`id_ticket`) REFERENCES `ticket` (`id_ticket`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,6 +72,7 @@ CREATE TABLE `observacion` (
 
 LOCK TABLES `observacion` WRITE;
 /*!40000 ALTER TABLE `observacion` DISABLE KEYS */;
+INSERT INTO `observacion` VALUES (2,650668531,'0','fb,lñf,bñfbñ','.mdv.dmvlmlrlrrmrmvlrgletjg','2016-03-28 20:00:15','');
 /*!40000 ALTER TABLE `observacion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -126,7 +127,7 @@ CREATE TABLE `ticket` (
 
 LOCK TABLES `ticket` WRITE;
 /*!40000 ALTER TABLE `ticket` DISABLE KEYS */;
-INSERT INTO `ticket` VALUES (1418195263,'Andres Olarte','carlos.aguirre@lagobo.com.co','nuevo','oportudata',102,'');
+INSERT INTO `ticket` VALUES (650668531,'Carlos Felipe Aguirre','carlos.aguirre@lagobo.com.co','nuevo','oportudata',102,''),(1418195263,'Andres Olarte','carlos.aguirre@lagobo.com.co','nuevo','oportudata',102,'');
 /*!40000 ALTER TABLE `ticket` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -168,4 +169,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-27 21:51:15
+-- Dump completed on 2016-03-28 21:44:10

@@ -40,9 +40,13 @@ class Ticket_model extends CI_Model
       return $this;
    }
 
+
+
    public function insertar(){
       $this->db->insert('ticket', $this);
    }
+
+
 
    public function consultar($id_ticket){
       $this->db->select("ticket.id_ticket,ticket.nombre,ticket.correo,ticket.estado,ticket.categoria,ticket.id_sucursal,ticket.email_responsable,observacion.tema,observacion.mensaje,observacion.fotografias");
