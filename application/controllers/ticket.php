@@ -254,5 +254,10 @@ class Ticket extends CI_Controller
    public function borrarTicket(){
       $this->Ticket_model->borrarTicket($this->input->post('id_ticket'));
    }
+
+   public function responderTicket(){
+   var_dump($this->input->post());
+      $this->Ticket_model->responderTicket($this->input->post());
+   }
 }
 

@@ -57,7 +57,8 @@ echo "</div>";
 for($i=0; $i<count($resultado['id_ticket']); $i++){
    echo "<div class='w3-card-2 w3-border w3-padding-medium w3-content' style='width:95%'>";
    echo "<h2 class='w3-indigo w3-center'>Tickets</h2>";
-   echo "<button class='w3-btn w3-blue'onclick='borrarTicket(this)' value='".$resultado['id_ticket'][$i]."'>Eliminar</button><br/>";
+   echo "<button class='w3-btn w3-blue w3-margin-2'onclick='borrarTicket(this)' value='".$resultado['id_ticket'][$i]."'>Eliminar</button>";
+   echo "<button class='w3-btn w3-blue w3-margin-2'onclick='mostrarResponder()' >Responder</button><br/>";
    echo "<b class='w3-text-black'>Código de seguimiento: </b>". $resultado['id_ticket'][$i] . "<br/>";
    echo "<b class='w3-text-black'>Nombre: </b>" . $resultado['nombre'][$i] . "<br/>";
    echo "<b class='w3-text-black'>Fecha: </b><b class='w3-text-indigo'>" . $resultado['fecha'][$i] . "</b><br/>";
@@ -68,20 +69,22 @@ for($i=0; $i<count($resultado['id_ticket']); $i++){
    echo "<b class='w3-text-black'>Responsable: </b>" . $resultado['email_responsable'][$i] . "<br/>";
    echo "<b class='w3-text-black'>Tema: </b>" . $resultado['tema'][$i] . "<br/>";
    echo "<b class='w3-text-black'>Adjuntos: </b><br/>" . $resultado['fotografias'][$i] . "<br/>";
-   echo "<br/><b class='w3-text-black'>Contenido: </b><br/><article id='mensaje_anterior".$resultado['id_ticket'][$i]."'>" . $resultado['mensaje'][$i] . "</article><br/>";
-   echo "<div>";
+   echo "<br/><b class='w3-text-black'>Contenido: </b><br/><article style='max-height:14em; overflow-y:scroll' id='mensaje_anterior".$resultado['id_ticket'][$i]."'>" . $resultado['mensaje'][$i] . "</article><br/>";
+   echo "<div id='form_responder' style='display:none'>";
    echo "<label class='w3-label'>Cambiar Estado:</label><br/>";
-   echo "<select name='estado_update' class='w3-select w3-border'>";
+   echo "<select name='estado_update' id='estado_update' class='w3-select w3-border'>";
    echo "<option value='Nuevo'>Nuevo</option>";
    echo "<option value='En espera'>En espera</option>";
    echo "<option value='En proceso'>En proceso</option>";
    echo "<option value='Resuelto'>Resuelto</option>";
    echo "</select>";
+   echo "<input type='hidden' id='id_observacion' value='".$resultado['id_observacion'][$i]."' />";
    echo "<label class='w3-label'>Asignar a:</label><br/>";
    echo form_dropdown('correos', $correos, null, "class='w3-select w3-border' id='update_correo'");
    echo "<label class='w3-label'>Mensaje:</label><br/>";
    echo "<textarea id='mensaje-adm".$resultado['id_ticket'][$i]."' class='w3-input w3-border w3-margin-4' style='width:95%'></textarea>";
    echo "<button class='w3-btn w3-indigo w3-margin-8' value='". $resultado['id_ticket'][$i] ."' onclick='actualizarTicket(this.value)' >Responder</button>";
+   echo "<button class='w3-btn w3-indigo w3-margin-8' onclick='ocultarResponder()' >Ocultar</button>";
    echo "</div>";
    echo "</div>";
    echo "<div style='height:1em'></div>";
@@ -109,16 +112,49 @@ $this->load->view('layouts/footer');
       var nombre=$('#update_nombre').val();
       var correo=$('#update_correo').val();
       var antMensajes= $('#mensaje_anterior'+id);
-
-      if(mensaje.val() !="" && mensaje.val()!=null){
+      var asignado=$('#update_correo').val();
+      var estado_ticket=$('#estado_update').val();
+      var id_observacion=$('#id_observacion').val();
+      alert("Se ha realizado la operación exitosamente\npara ver los cambios actualice.");
+      if(mensaje.val()!="" && mensaje.val()!=null){
          var nuevoMensaje=antMensajes.html();
+         nuevoMensaje+="<div class='w3-light-blue w3-padding-small w3-border'>";
+         nuevoMensaje+="Fecha: <b>"+new Date().toLocaleString()+"</b><br/>";
          nuevoMensaje+="Nombre: <b>"+nombre+"</b><br/>";
          nuevoMensaje+="Correo: <b>"+correo+"</b><br/>";
          nuevoMensaje+="<b>Comentario: </b><br/><p>"+mensaje.val()+"</p>";
-         alert(nuevoMensaje);
-        console.log(nuevoMensaje);
-      }
+         nuevoMensaje+="</div>";
 
+         $.post(
+            window.location.origin+"/index.php/ticket/responderTicket",
+            {
+             id_observacion: id_observacion,
+             id_ticket: id,
+             mensaje: nuevoMensaje,
+             asignadoA: asignado,
+             estado:estado_ticket
+            }
+         );
+       }
+       else{
+          $.post(
+            window.location.origin+"/index.php/ticket/responderTicket",
+            {
+             id_observacion: id_observacion,
+             id_ticket: id,
+             asignadoA: asignado,
+             estado:estado_ticket
+            }
+         );
+       }
+   }
+
+   function mostrarResponder(){
+      $('#form_responder').show('1500');
+   }
+
+   function ocultarResponder(){
+      $('#form_responder').hide('1500');
    }
 </script>
 

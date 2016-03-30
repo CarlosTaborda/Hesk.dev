@@ -35,7 +35,7 @@ class Usuario extends CI_Controller
       ];
 
       $this->form_validation->set_rules($_config);
-      if ($this->form_validation->run() == false && !empty($this->session->userdata('logueado'))){
+      if ($this->form_validation->run() == false && empty($this->session->userdata('logueado'))){
          $this->index();
       }
       else{

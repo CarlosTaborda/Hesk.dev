@@ -64,11 +64,11 @@ class Ticket_model extends CI_Model
 
    public function verTickets($data){
       if(!empty($data['estado'])){
-         $_respuesta=$this->db->query("SELECT ticket.id_ticket,ticket.nombre,ticket.correo,ticket.estado,ticket.categoria,ticket.id_sucursal,ticket.email_responsable,observacion.fecha,observacion.tema,observacion.mensaje,observacion.fotografias
+         $_respuesta=$this->db->query("SELECT ticket.id_ticket,ticket.nombre,ticket.correo,ticket.estado,ticket.categoria,ticket.id_sucursal,ticket.email_responsable,observacion.fecha,observacion.tema,observacion.id_observacion,observacion.mensaje,observacion.fotografias
                            FROM ticket INNER JOIN observacion ON ticket.id_ticket=observacion.id_ticket WHERE estado='". $data['estado'] ."' ORDER BY observacion.fecha " . $data['fecha']);
       }
       else{
-         $_respuesta=$this->db->query("SELECT ticket.id_ticket,ticket.nombre,ticket.correo,ticket.estado,ticket.categoria,ticket.id_sucursal,ticket.email_responsable,observacion.fecha,observacion.tema,observacion.mensaje,observacion.fotografias
+         $_respuesta=$this->db->query("SELECT ticket.id_ticket,ticket.nombre,ticket.correo,ticket.estado,ticket.categoria,ticket.id_sucursal,ticket.email_responsable,observacion.fecha,observacion.tema,observacion.id_observacion,observacion.mensaje,observacion.fotografias
                            FROM ticket INNER JOIN observacion ON ticket.id_ticket=observacion.id_ticket ORDER BY observacion.fecha " . $data['fecha']);
       }
      if($this->convertirArray($_respuesta->result_array())){
@@ -101,6 +101,35 @@ class Ticket_model extends CI_Model
    public function borrarTicket($id_ticket){
       $this->db->where('id_ticket',$id_ticket);
       $this->db->delete(['ticket','observacion']);
+   }
+
+   public function responderTicket($datos){
+      if(empty($datos['mensaje'])){
+         unset($datos['mensaje']);
+         $_update=[
+            "estado"=>$datos["estado"],
+            "email_responsable"=>$datos['asignadoA']
+         ];
+         $this->db->where("id_ticket",$datos['id_ticket']);
+         $this->db->update('ticket', $_update);
+      }
+      else{
+         $_update=[
+            "mensaje"=>$datos['mensaje']
+         ];
+         $this->db->where("id_ticket",$datos['id_ticket']);
+         $this->db->where("id_observacion", $datos['id_observacion']);
+         $this->db->update('observacion', $_update);
+
+         unset($_update["mensaje"]);
+
+         $_update=[
+            "estado"=>$datos["estado"],
+            "email_responsable"=>$datos['asignadoA']
+         ];
+         $this->db->where("id_ticket",$datos['id_ticket']);
+         $this->db->update('ticket', $_update);
+      }
    }
 }
 
