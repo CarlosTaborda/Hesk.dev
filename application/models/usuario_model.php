@@ -23,7 +23,7 @@ class Usuario_model extends CI_Model
 
        $where = ['correo'=>$usuario, 'contrasena'=>$contrasena, 'activo'=>1];
 
-       $this->db->select('nombre,correo,rol');
+       $this->db->select('nombre,correo,rol,sucursales_encargadas');
        $this->db->where($where);
        $_infoUsuario=$this->db->get('usuario')->row_array();
 
@@ -107,4 +107,3 @@ class Usuario_model extends CI_Model
       }
    }
 }
-

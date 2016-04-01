@@ -84,21 +84,17 @@ echo form_close();
 $(document).ready(
    function(){
       $('label[for=observacion-id_equipo], #observacion-id_equipo').hide();
-      $('label[for=observacion-fotografias], input[type=file]').hide();
       $('#ticket-categoria').on('change',
          function(){
             var valor = $('#ticket-categoria').val();
             if(valor=="hardware"){
                $('label[for=observacion-id_equipo], #observacion-id_equipo').show('2500');
-               $('label[for=observacion-fotografias], input[type=file]').show('2500');
             }
             else{
                $('label[for=observacion-id_equipo], #observacion-id_equipo').hide('2500');
-               $('label[for=observacion-fotografias], input[type=file]').hide('2500');
             }
          }
       );
    }
 );
 </script>
-

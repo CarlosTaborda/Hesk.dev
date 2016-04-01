@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.47, for debian-linux-gnu (i686)
+-- MySQL dump 10.16  Distrib 10.1.9-MariaDB, for Win32 (AMD64)
 --
 -- Host: localhost    Database: hesk
 -- ------------------------------------------------------
--- Server version	5.5.47-0+deb8u1
+-- Server version	10.1.9-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -24,6 +24,7 @@ DROP TABLE IF EXISTS `equipo`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `equipo` (
   `id_equipo` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `activo_fijo` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `marca` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `modelo` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `fecha_compra` date NOT NULL,
@@ -39,7 +40,7 @@ CREATE TABLE `equipo` (
 
 LOCK TABLES `equipo` WRITE;
 /*!40000 ALTER TABLE `equipo` DISABLE KEYS */;
-INSERT INTO `equipo` VALUES ('0','No existe equipo','Es una entrada por defecto','2016-03-01','Nadie','102');
+INSERT INTO `equipo` VALUES ('0',NULL,'No existe equipo','Es una entrada por defecto','2016-03-01','Nadie','102');
 /*!40000 ALTER TABLE `equipo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -144,6 +145,7 @@ CREATE TABLE `usuario` (
   `correo` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `contrasena` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `rol` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
+  `sucursales_encargadas` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `categoria` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `activo` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_usuario`)
@@ -156,7 +158,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (3,'Carlos Felipe Aguirre Taborda','carlos.aguirre@lagobo.com.co','32879f25bd72ea0ffb187d8f9bd1499b7a3ed1dd','adm','hardware redes aurora otro ',1),(4,'Carlos Felipe Aguirre Taborda','carlos.aguirre@lagobo.com.co','32879f25bd72ea0ffb187d8f9bd1499b7a3ed1dd','adm','hardware redes aurora otro ',0);
+INSERT INTO `usuario` VALUES (3,'Carlos Felipe Aguirre Taborda','carlos.aguirre@lagobo.com.co','32879f25bd72ea0ffb187d8f9bd1499b7a3ed1dd','adm',NULL,'hardware redes aurora otro ',1),(4,'Carlos Felipe Aguirre Taborda','carlos.aguirre@lagobo.com.co','32879f25bd72ea0ffb187d8f9bd1499b7a3ed1dd','adm',NULL,'hardware redes aurora otro ',0);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -169,4 +171,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-28 21:44:10
+-- Dump completed on 2016-03-31 18:35:38

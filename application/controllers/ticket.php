@@ -130,6 +130,10 @@ class Ticket extends CI_Controller
          $_datos['id_ticket']=$id_ticket;
          $_datos['fotografias']= !empty($_linkImagenes)? $_linkImagenes : null;
 
+         if($_datos["categoria"]=="aurora"){
+           $this->Ticket_model->asignarEncargado($_datos['id_sucursal']);
+         }
+
          $this->sql($_datos, 'ticket', 'insertar');
          $this->sql($_datos, 'observacion', 'insertar');
 
@@ -260,4 +264,3 @@ class Ticket extends CI_Controller
       $this->Ticket_model->responderTicket($this->input->post());
    }
 }
-

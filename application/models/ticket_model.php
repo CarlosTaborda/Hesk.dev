@@ -131,5 +131,12 @@ class Ticket_model extends CI_Model
          $this->db->update('ticket', $_update);
       }
    }
-}
 
+
+   public function asignarEncargado($id_sucursal){
+     $this->db->select("correo");
+     $this->db->like("sucursales_encargadas",$id_sucursal);
+     $_resultado=$this->db->get('usuario')->row_array();
+     return $_resultado['correo'];
+   }
+}
