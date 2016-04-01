@@ -140,3 +140,4 @@ class Ticket_model extends CI_Model
      return $_resultado['correo'];
    }
 }
+

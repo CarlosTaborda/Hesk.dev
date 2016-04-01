@@ -35,8 +35,8 @@
       onclick="cerrarMenu()"
       class="w3-closenav w3-large">Cerrar &times;</a>
       <a href='<?php echo site_url(); ?>'>Inicio</a>
-      <a href='<?php echo site_url("ticket/consultar"); ?>'>Consultar Ticket</a>
       <a href='<?php echo site_url("ticket/crearTicket"); ?>'>Crear Ticket</a>
+      <a href='<?php echo site_url("ticket/consultar"); ?>'>Consultar Ticket</a>
       <a href='<?php echo site_url("sucursal"); ?>'>Sucursal</a>
       <a href='<?php echo site_url("usuario/index"); ?>'>Ingresar</a>
       <div class="w3-dropdown-hover">
@@ -65,3 +65,4 @@
         <div class='w3-center'>
            <img src="<?php echo base_url('assets/img/logo_lagobo.png') ?>" />
         </div>
+

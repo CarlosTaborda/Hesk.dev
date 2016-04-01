@@ -47,6 +47,7 @@ echo "<div style='height:3em'></div>";
 <div name='info' style="display:block">
    <button value="<?php echo $this->session->userdata('correo'); ?>" id="update_correo">Correo</button>
    <button value="<?php echo $this->session->userdata('nombre'); ?>" id="update_nombre" >Nombre</button>
+   <button value="<?php echo $this->session->userdata('rol'); ?>" id="update_nombre" >Rol</button>
 </div>
 
 <?php
@@ -156,5 +157,9 @@ $this->load->view('layouts/footer');
    function ocultarResponder(){
       $('#form_responder').hide('1500');
    }
+
+   window.onload=function(){
+     console.log(Cookies.get('rol'));
+   };
 </script>
 
