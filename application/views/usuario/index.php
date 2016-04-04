@@ -84,7 +84,8 @@ echo form_label("Rol: <br/>", "usuario-rol", ["class"=>"w3-label"]);
 echo form_dropdown('rol',[
    ""=>"-seleccione-",
    "adm"=>"Administrador",
-   "aud"=>"Auditor",
+   "aud"=>"Auditor(a)",
+   "con"=>"Contador(a)",
    "usu"=>"Usuario"
 ], "", "class='w3-select w3-border' required='true' id='usuario-rol'");
 

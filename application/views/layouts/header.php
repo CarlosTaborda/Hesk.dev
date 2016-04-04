@@ -2,6 +2,7 @@
 <HTML lang="es">
     <head>
         <link rel='stylesheet' href='<?php echo base_url("assets/css/w3.css"); ?>' />
+        <link rel='stylesheet' href='<?php echo base_url("assets/css/animate.css"); ?>' />
         <script type='text/javascript' src='<?php echo base_url("assets/js/jquery.js"); ?>'></script>
         <?php
             if(!empty($head_files)){

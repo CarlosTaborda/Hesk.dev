@@ -12,7 +12,7 @@ echo form_open_multipart("ticket/obtener", [
    "style"=>"width: 80%"]
 );
 
-echo "<h2 class='w3-indigo w3-center'>Crear Ticket</h2>";
+echo "<h2 class='w3-indigo w3-center animated pulse'>Crear Ticket</h2>";
 
 echo form_label("Su nombre: ","ticket-nombre", ["class"=>"w3-label"]);
 echo form_input(["type"=>"name",
@@ -98,3 +98,4 @@ $(document).ready(
    }
 );
 </script>
+
