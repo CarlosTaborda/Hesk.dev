@@ -64,7 +64,7 @@ CREATE TABLE `observacion` (
   KEY `observacion_equipo` (`id_equipo`),
   CONSTRAINT `ObservacionEquipo` FOREIGN KEY (`id_equipo`) REFERENCES `equipo` (`id_equipo`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `observacion_ibfk_1` FOREIGN KEY (`id_ticket`) REFERENCES `ticket` (`id_ticket`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +73,7 @@ CREATE TABLE `observacion` (
 
 LOCK TABLES `observacion` WRITE;
 /*!40000 ALTER TABLE `observacion` DISABLE KEYS */;
-INSERT INTO `observacion` VALUES (2,650668531,'0','fb,lñf,bñfbñ','.mdv.dmvlmlrlrrmrmvlrgletjg','2016-03-28 20:00:15','');
+INSERT INTO `observacion` VALUES (7,2084954519,'0','Habilitar recibos de caja','dskljhngvfodhgkrjg h gkrjhgkrhgkrjkjfdghkfdjg dg gkjdhgkdfgh','2016-04-04 22:10:54','<a href=\'http://hesk.dev/uploads/2-CATALOGOMARZO_-_copia.jpg\'>http://hesk.dev/uploads/2-CATALOGOMARZO_-_copia.jpg</a><br/><a href=\'http://hesk.dev/uploads/3-CATALOGOMARZO_-_copia.jpg\'>http://hesk.dev/uploads/3-CATALOGOMARZO_-_copia.jpg</a><br/>');
 /*!40000 ALTER TABLE `observacion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -128,7 +128,7 @@ CREATE TABLE `ticket` (
 
 LOCK TABLES `ticket` WRITE;
 /*!40000 ALTER TABLE `ticket` DISABLE KEYS */;
-INSERT INTO `ticket` VALUES (650668531,'Carlos Felipe Aguirre','carlos.aguirre@lagobo.com.co','nuevo','oportudata',102,''),(1418195263,'Andres Olarte','carlos.aguirre@lagobo.com.co','nuevo','oportudata',102,'');
+INSERT INTO `ticket` VALUES (1418195263,'Andres Olarte','carlos.aguirre@lagobo.com.co','nuevo','oportudata',102,''),(2084954519,'Ticket para prueba de aurora','blablabla@lagobo.com','nuevo','aurora',102,'prueba.contabilidad@lagobo.com.co');
 /*!40000 ALTER TABLE `ticket` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,7 +149,7 @@ CREATE TABLE `usuario` (
   `categoria` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `activo` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,7 +158,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (3,'Carlos Felipe Aguirre Taborda','carlos.aguirre@lagobo.com.co','32879f25bd72ea0ffb187d8f9bd1499b7a3ed1dd','adm',NULL,'hardware redes aurora otro ',1),(4,'Carlos Felipe Aguirre Taborda','carlos.aguirre@lagobo.com.co','32879f25bd72ea0ffb187d8f9bd1499b7a3ed1dd','adm',NULL,'hardware redes aurora otro ',0);
+INSERT INTO `usuario` VALUES (3,'Carlos Felipe Aguirre Taborda','carlos.aguirre@lagobo.com.co','32879f25bd72ea0ffb187d8f9bd1499b7a3ed1dd','adm',NULL,'hardware redes aurora otro ',1),(4,'Carlos Felipe Aguirre Taborda','carlos.aguirre@lagobo.com.co','32879f25bd72ea0ffb187d8f9bd1499b7a3ed1dd','adm',NULL,'hardware redes aurora otro ',0),(5,'Prueba de Contabilidad','prueba.contabilidad@lagobo.com.co','32879f25bd72ea0ffb187d8f9bd1499b7a3ed1dd','con','102 103','aurora ',1);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -171,4 +171,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-31 18:35:38
+-- Dump completed on 2016-04-04 18:08:14

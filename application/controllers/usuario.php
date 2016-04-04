@@ -97,5 +97,10 @@ class Usuario extends CI_Controller
       }
    }
 
-}
 
+   public function cerrarSesion(){
+      $this->session->sess_destroy();
+      header("Location: " . base_url());
+   }
+
+}

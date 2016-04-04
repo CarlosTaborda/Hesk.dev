@@ -63,14 +63,24 @@ class Ticket_model extends CI_Model
    }
 
    public function verTickets($data){
+     if($this->session->userdata('rol')=="con"){
+        $_contador="email_responsable='" . $this->session->userdata('correo') . "'";
+     }
+
+
       if(!empty($data['estado'])){
          $_respuesta=$this->db->query("SELECT ticket.id_ticket,ticket.nombre,ticket.correo,ticket.estado,ticket.categoria,ticket.id_sucursal,ticket.email_responsable,observacion.fecha,observacion.tema,observacion.id_observacion,observacion.mensaje,observacion.fotografias
-                           FROM ticket INNER JOIN observacion ON ticket.id_ticket=observacion.id_ticket WHERE estado='". $data['estado'] ."' ORDER BY observacion.fecha " . $data['fecha']);
+                           FROM ticket INNER JOIN observacion
+                           ON ticket.id_ticket=observacion.id_ticket
+                           WHERE estado='". $data['estado'] . (!empty($_contador)? " AND" . $_contador : "") . "' ORDER BY observacion.fecha " . $data['fecha']);
       }
       else{
-         $_respuesta=$this->db->query("SELECT ticket.id_ticket,ticket.nombre,ticket.correo,ticket.estado,ticket.categoria,ticket.id_sucursal,ticket.email_responsable,observacion.fecha,observacion.tema,observacion.id_observacion,observacion.mensaje,observacion.fotografias
-                           FROM ticket INNER JOIN observacion ON ticket.id_ticket=observacion.id_ticket ORDER BY observacion.fecha " . $data['fecha']);
+                 $_respuesta=$this->db->query("SELECT ticket.id_ticket,ticket.nombre,ticket.correo,ticket.estado,ticket.categoria,ticket.id_sucursal,ticket.email_responsable,observacion.fecha,observacion.tema,observacion.id_observacion,observacion.mensaje,observacion.fotografias
+                           FROM ticket INNER JOIN observacion
+                           ON ticket.id_ticket=observacion.id_ticket
+                           " . (!empty($_contador)? "WHERE " . $_contador : "") . "ORDER BY observacion.fecha " . $data['fecha']);
       }
+
      if($this->convertirArray($_respuesta->result_array())){
         $_numero=$_respuesta->num_rows();
         $_filas[]=$this->convertirArray($_respuesta->result_array());
@@ -140,4 +150,3 @@ class Ticket_model extends CI_Model
      return $_resultado['correo'];
    }
 }
-

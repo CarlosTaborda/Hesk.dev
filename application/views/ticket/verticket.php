@@ -1,9 +1,9 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-$usuarios_permitidos=['adm'];
+$usuarios_permitidos=['adm',"con"];
 if(!$this->Usuario_model->permitirVistaUsuario($usuarios_permitidos, $this->session->all_userdata())){
-   $this->index();
+    header("Location: " . site_url('usuario/index'));
 }
 
 $this->load->view('layouts/header');
@@ -44,7 +44,7 @@ echo form_close();
 echo "<div style='height:3em'></div>";
 ?>
 
-<div name='info' style="display:block">
+<div name='info' style="display:none">
    <button value="<?php echo $this->session->userdata('correo'); ?>" id="update_correo">Correo</button>
    <button value="<?php echo $this->session->userdata('nombre'); ?>" id="update_nombre" >Nombre</button>
    <button value="<?php echo $this->session->userdata('rol'); ?>" id="update_nombre" >Rol</button>
@@ -102,7 +102,8 @@ $this->load->view('layouts/footer');
             window.location.origin+"/index.php/ticket/borrarTicket",
             {id_ticket: boton.value},
             function(){
-               boton.parentElement.remove();
+               boton.parentElement.classList.add('animated');
+               boton.parentElement.classList.add('fadeOutRightBig');
             }
          );
       }
@@ -157,9 +158,4 @@ $this->load->view('layouts/footer');
    function ocultarResponder(){
       $('#form_responder').hide('1500');
    }
-
-   window.onload=function(){
-     console.log(Cookies.get('rol'));
-   };
 </script>
-
