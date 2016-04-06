@@ -40,11 +40,6 @@
       <a href='<?php echo site_url("ticket/consultar"); ?>'>Consultar Ticket</a>
       <a href='<?php echo site_url("sucursal"); ?>'>Sucursal</a>
       <a href='<?php echo site_url("usuario/index"); ?>'>Ingresar</a>
-      <?php
-        if(!empty($this->session->userdata('logueado'))){
-          echo "<a href='" . site_url("usuario/cerrarSesion") . "'>Cerrar sesión</a>";
-        }
-      ?>
       <div class="w3-dropdown-hover">
       <a href="#">Equipo <i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-indigo w3-border w3-card-4">
@@ -53,6 +48,11 @@
           <a href="#">Link 3</a>
         </div>
       </div>
+      <?php
+        if(!empty($this->session->userdata('logueado'))){
+          echo "<a href='" . site_url("usuario/cerrarSesion") . "'>Cerrar sesión</a>";
+        }
+      ?>
     </nav>
 
     <div id="main">
