@@ -130,6 +130,9 @@ class Ticket extends CI_Controller
          $_datos['id_ticket']=$id_ticket;
          $_datos['fotografias']= !empty($_linkImagenes)? $_linkImagenes : null;
 
+         //enviar un correo electronico de confirmacion
+         $this->enviarCorreo($_datos['correo'], $id_ticket);
+
          if($_datos["categoria"]=="aurora"){
            $_datos['email_responsable']=$this->Ticket_model->asignarEncargado($_datos['id_sucursal']);
          }
@@ -147,6 +150,19 @@ class Ticket extends CI_Controller
      }
    }
 
+   public function enviarCorreo($correo, $id_ticket){
+     $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+     $cabeceras .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+     $cabeceras .= 'From: Mesa de Ayuda <soportelagobo@lagobo.com.co>' . "\r\n";
+
+      $_correos= $this->Usuario_model->traerCorreos('adm');
+      $_correos['correo'][]=$correo;
+      $_mensaje=$this->load->view("layouts/email", ["id_ticket"=>$id_ticket], true);
+      foreach($_correos['correo'] as $correo){
+          mail($correo, "Mesa de Ayuda", $_mensaje, $cabeceras);
+      }
+      echo "ya";
+   }
 
 
    public function sql($datos, $tabla, $accion){
@@ -264,4 +280,3 @@ class Ticket extends CI_Controller
       $this->Ticket_model->responderTicket($this->input->post());
    }
 }
-

@@ -64,7 +64,7 @@ CREATE TABLE `observacion` (
   KEY `observacion_equipo` (`id_equipo`),
   CONSTRAINT `ObservacionEquipo` FOREIGN KEY (`id_equipo`) REFERENCES `equipo` (`id_equipo`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `observacion_ibfk_1` FOREIGN KEY (`id_ticket`) REFERENCES `ticket` (`id_ticket`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +73,7 @@ CREATE TABLE `observacion` (
 
 LOCK TABLES `observacion` WRITE;
 /*!40000 ALTER TABLE `observacion` DISABLE KEYS */;
-INSERT INTO `observacion` VALUES (7,2084954519,'0','Habilitar recibos de caja','dskljhngvfodhgkrjg h gkrjhgkrhgkrjkjfdghkfdjg dg gkjdhgkdfgh','2016-04-04 22:10:54','<a href=\'http://hesk.dev/uploads/2-CATALOGOMARZO_-_copia.jpg\'>http://hesk.dev/uploads/2-CATALOGOMARZO_-_copia.jpg</a><br/><a href=\'http://hesk.dev/uploads/3-CATALOGOMARZO_-_copia.jpg\'>http://hesk.dev/uploads/3-CATALOGOMARZO_-_copia.jpg</a><br/>');
+INSERT INTO `observacion` VALUES (7,2084954519,'0','Habilitar recibos de caja','dskljhngvfodhgkrjg h gkrjhgkrhgkrjkjfdghkfdjg dg gkjdhgkdfgh','2016-04-04 22:10:54','<a href=\'http://hesk.dev/uploads/2-CATALOGOMARZO_-_copia.jpg\'>http://hesk.dev/uploads/2-CATALOGOMARZO_-_copia.jpg</a><br/><a href=\'http://hesk.dev/uploads/3-CATALOGOMARZO_-_copia.jpg\'>http://hesk.dev/uploads/3-CATALOGOMARZO_-_copia.jpg</a><br/>'),(8,550301037,'0','dlksjflksdfljglkrg','sdfgkmñrlkjgdkjhtjhtklgjhdkltjh','2016-04-06 23:13:22','<a href=\'http://hesk.dev/uploads/2-CATALOGOMARZO_-_copia.jpg\'>http://hesk.dev/uploads/2-CATALOGOMARZO_-_copia.jpg</a><br/><a href=\'http://hesk.dev/uploads/1CATALOGO_MARZO.jpg\'>http://hesk.dev/uploads/1CATALOGO_MARZO.jpg</a><br/>'),(9,1451727511,'0','dfsgkjlrjkñlrejg','fjnkejngfvkergverkgergtgrrth t htr hrthrth hrtrh','2016-04-06 23:19:27',''),(10,1158841399,'0','mndvbmvbvbvrv','Lorem ipsun awkhqdkqwuehfkefgieguf','2016-04-06 23:42:12','');
 /*!40000 ALTER TABLE `observacion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -128,7 +128,7 @@ CREATE TABLE `ticket` (
 
 LOCK TABLES `ticket` WRITE;
 /*!40000 ALTER TABLE `ticket` DISABLE KEYS */;
-INSERT INTO `ticket` VALUES (1418195263,'Andres Olarte','carlos.aguirre@lagobo.com.co','nuevo','oportudata',102,''),(2084954519,'Ticket para prueba de aurora','blablabla@lagobo.com','nuevo','aurora',102,'prueba.contabilidad@lagobo.com.co');
+INSERT INTO `ticket` VALUES (550301037,'Prueba Dos','carlos.aguirre@lagobo.com.co','nuevo','oportudata',102,''),(1158841399,'Ticket Dos','carlos.aguirre@lagobo.com.co','nuevo','oportudata',102,''),(1418195263,'Andres Olarte','carlos.aguirre@lagobo.com.co','nuevo','oportudata',102,''),(1451727511,'Carlos Taborda Aguirre','prueba.contabilidad@lagobo.com.co','nuevo','oportudata',102,''),(2084954519,'Ticket para prueba de aurora','blablabla@lagobo.com','nuevo','aurora',102,'prueba.contabilidad@lagobo.com.co');
 /*!40000 ALTER TABLE `ticket` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,4 +171,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-04 18:08:14
+-- Dump completed on 2016-04-06 17:29:59

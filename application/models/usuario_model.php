@@ -92,6 +92,12 @@ class Usuario_model extends CI_Model
 
    }
 
+   public function traerCorreos($rol){
+     $this->db->select("correo");
+     $this->db->distinct();
+     $this->db->where("rol", $rol);
+     return $this->convertirArray($this->db->get('usuario')->result_array());
+   }
    private function convertirArray($consulta){
       if(!empty($consulta)){
          $_columnas = array_keys($consulta[0]);
