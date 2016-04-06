@@ -120,6 +120,11 @@ class Ticket_model extends CI_Model
             "estado"=>$datos["estado"],
             "email_responsable"=>$datos['asignadoA']
          ];
+
+         if(empty($datos['asignadoA'])){
+            unset($_update['email_responsable']);
+         }
+
          $this->db->where("id_ticket",$datos['id_ticket']);
          $this->db->update('ticket', $_update);
       }
@@ -150,3 +155,4 @@ class Ticket_model extends CI_Model
      return $_resultado['correo'];
    }
 }
+

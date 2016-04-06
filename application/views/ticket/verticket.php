@@ -80,8 +80,10 @@ for($i=0; $i<count($resultado['id_ticket']); $i++){
    echo "<option value='Resuelto'>Resuelto</option>";
    echo "</select>";
    echo "<input type='hidden' id='id_observacion' value='".$resultado['id_observacion'][$i]."' />";
-   echo "<label class='w3-label'>Asignar a:</label><br/>";
-   echo form_dropdown('correos', $correos, null, "class='w3-select w3-border' id='update_correo'");
+   if($this->session->userdata('rol')!="con"){
+      echo "<label class='w3-label'>Asignar a:</label><br/>";
+      echo form_dropdown('correos', $correos, null, "class='w3-select w3-border' id='update_correo'");
+   }
    echo "<label class='w3-label'>Mensaje:</label><br/>";
    echo "<textarea id='mensaje-adm".$resultado['id_ticket'][$i]."' class='w3-input w3-border w3-margin-4' style='width:95%'></textarea>";
    echo "<button class='w3-btn w3-indigo w3-margin-8' value='". $resultado['id_ticket'][$i] ."' onclick='actualizarTicket(this.value)' >Responder</button>";
@@ -159,3 +161,4 @@ $this->load->view('layouts/footer');
       $('#form_responder').hide('1500');
    }
 </script>
+
