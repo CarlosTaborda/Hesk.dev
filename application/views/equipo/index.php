@@ -1,4 +1,10 @@
 <?php
+//Permitir usuarios o denegarlos dependiendo del rol
+$usuarios_permitidos=['adm'];
+if(!$this->Usuario_model->permitirVistaUsuario($usuarios_permitidos, $this->session->all_userdata())){
+   header("Location: " . site_url('usuario/index'));
+}
+
 $head_files=[
   '<script src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>',
   '<link rel="stylesheet" href="'. base_url('assets/css/flick/jquery-ui.css') .'" />',

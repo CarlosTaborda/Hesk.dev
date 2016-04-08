@@ -276,7 +276,21 @@ class Ticket extends CI_Controller
    }
 
    public function responderTicket(){
-   var_dump($this->input->post());
-      $this->Ticket_model->responderTicket($this->input->post());
-   }
+     foreach ($_FILES as $fieldname => $fileObject){
+        if (!empty($fileObject['name'])){
+
+           if (!$this->upload->do_upload($fieldname)){
+              $errors = $this->upload->display_errors();
+              $data['errors']=$errors;
+              echo $data['errors'];
+              exit(0);
+           }
+
+           $_infoArchivo= $this->upload->data();
+           $_linkImagenes[]= base_url('uploads') . '/' . $_infoArchivo['file_name'];
+        }
+    }
+    echo $_linkImagenes;
+    $this->Ticket_model->responderTicket($this->input->post());
+  }
 }

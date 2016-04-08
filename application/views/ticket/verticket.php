@@ -6,7 +6,10 @@ if(!$this->Usuario_model->permitirVistaUsuario($usuarios_permitidos, $this->sess
     header("Location: " . site_url('usuario/index'));
 }
 
-$this->load->view('layouts/header');
+//archivos de la cabecera
+$head_files[]="<script type='text/javascript' src='" . base_url("assets/js/jqueryupload.js") . "'></script>";
+
+$this->load->view('layouts/header', ["head_files"=>$head_files]);
 
 echo form_open('ticket/verTickets', [
    "class"=>"w3-form w3-card-4 w3-border w3-content"
@@ -86,6 +89,8 @@ for($i=0; $i<count($resultado['id_ticket']); $i++){
    }
    echo "<label class='w3-label'>Mensaje:</label><br/>";
    echo "<textarea id='mensaje-adm".$resultado['id_ticket'][$i]."' class='w3-input w3-border w3-margin-4' style='width:95%'></textarea>";
+   echo "<label class='w3-label'>Adjuntos: </label>";
+   echo "<input type='file' name='fotografias'  class='w3-input w3-border' style='width:95%' accept='image/*' id='update-fotografias' class='fileUpload'/>";
    echo "<button class='w3-btn w3-indigo w3-margin-8' value='". $resultado['id_ticket'][$i] ."' onclick='actualizarTicket(this.value)' >Responder</button>";
    echo "<button class='w3-btn w3-indigo w3-margin-8' onclick='ocultarResponder()' >Ocultar</button>";
    echo "</div>";
@@ -119,6 +124,13 @@ $this->load->view('layouts/footer');
       var asignado=$('#update_correo').val();
       var estado_ticket=$('#estado_update').val();
       var id_observacion=$('#id_observacion').val();
+      if($("#update-fotografias").val()!=""){
+        var formData = new FormData();
+        formData.append('file', $('input[type=file]')[0].files[0]);
+        console.log(formData);
+      }
+
+
       alert("Se ha realizado la operación exitosamente\npara ver los cambios actualice.");
       if(mensaje.val()!="" && mensaje.val()!=null){
          var nuevoMensaje=antMensajes.html();
@@ -136,7 +148,8 @@ $this->load->view('layouts/footer');
              id_ticket: id,
              mensaje: nuevoMensaje,
              asignadoA: asignado,
-             estado:estado_ticket
+             estado:estado_ticket,
+             archivo:formData
             }
          );
        }
@@ -147,7 +160,8 @@ $this->load->view('layouts/footer');
              id_observacion: id_observacion,
              id_ticket: id,
              asignadoA: asignado,
-             estado:estado_ticket
+             estado:estado_ticket,
+             archivo:formData
             }
          );
        }
@@ -161,4 +175,3 @@ $this->load->view('layouts/footer');
       $('#form_responder').hide('1500');
    }
 </script>
-
