@@ -34,7 +34,7 @@
     <nav class="w3-sidenav w3-indigo w3-card-2" style="display:none">
       <a href="javascript:void(0)"
       onclick="cerrarMenu()"
-      class="w3-closenav w3-large">Cerrar &times;</a>
+      class="w3-closenav w3-large">Cerrar<i class="material-icons">&#xE5CD;</i></a>
       <a href='<?php echo site_url(); ?>'>Inicio</a>
       <a href='<?php echo site_url("ticket/crearTicket"); ?>'>Crear Ticket</a>
       <a href='<?php echo site_url("ticket/consultar"); ?>'>Consultar Ticket</a>
@@ -50,7 +50,7 @@
       </div>
       <?php
         if(!empty($this->session->userdata('logueado'))){
-          echo "<a href='" . site_url("usuario/cerrarSesion") . "'>Cerrar sesión</a>";
+          echo "<a href='" . site_url("usuario/cerrarSesion") . "'>Cerrar sesión <i class='material-icons'>&#xE853;</i></a>";
         }
       ?>
     </nav>
