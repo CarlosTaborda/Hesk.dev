@@ -10,7 +10,10 @@ class Equipo extends CI_Controller
      $this->load->library('form_validation');
 
      /*Cargar sucursal */
-     $this->load->model('Sucursal_model');
+     $this->load->model( [
+      "Sucursal_model",
+      "Equipo_model"
+     ]);
   }
 
   public function index(){
@@ -18,7 +21,12 @@ class Equipo extends CI_Controller
   }
 
   public function insertar(){
-     var_dump($this->input->post());
+     $this->Equipo_model->cargar($this->input->post())->insertar();
+     $this->load->view("layouts/mensaje",[
+                                          "url"=>site_url("equipo"),
+                                          "tiempo"=>4,
+                                          "mensaje"=>"El equipo ha sido creado exitosamente",
+                                          ]);
   }
 }
 

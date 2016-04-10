@@ -40,7 +40,7 @@ $this->load->view('layouts/header', ["head_files"=>$head_files]);
 
       <label class="w3-label" for="equipo-sucursal">Sucursal:</label><br/>
       <?php
-        echo form_dropdown("sucursal", $sucursales, null, "name='sucursal' id='equipo-sucursal' class='w3-select w3-border' style='width: 97%'");
+        echo form_dropdown("sucursal", $sucursales, null, "name='sucursal' id='equipo-sucursal' class='w3-select w3-border' style='width: 97%' required");
       ?>
       <div class="w3-center">
         <button type="submit" class='w3-btn w3-indigo w3-margin-8'>Crear</button>
