@@ -62,5 +62,39 @@ class Equipo extends CI_Controller
                                           "mensaje"=>"Se ha añadido una nueva entrada satisfactoriamente.",
                                           ]);
    }
+
+
+   public function consultarHojaVida(){
+      $this->load->view("equipo/consultarhv", ["seriales"=>$this->Equipo_model->obtenerSeriales()]);
+   }
+
+   public function verHojaVida(){
+      $id_equipo= strtoupper($this->input->post("id_equipo"));
+      $_resultado=$this->Equipo_model->consultarTodasEntradas($id_equipo);
+      if(empty($_resultado)){
+         $this->load->view("layouts/mensaje",[
+            "url"=>site_url("equipo/consultarHojaVida"),
+            "mensaje"=>"El equipo no esta registrado o no tiene entradas que mostrar",
+            "titulo"=>"Error"
+         ]);
+      }else{
+         $_nombre=uniqid();
+         $pdfFilePath = FCPATH."/downloads/".$_nombre.".pdf";
+
+         if (file_exists($pdfFilePath) == FALSE)
+         {
+             ini_set('memory_limit','32M'); // boost the memory limit if it's low <img src="https://s.w.org/images/core/emoji/72x72/1f609.png" alt="😉" draggable="false" class="emoji">
+             $html = $this->load->view("equipo/hojavida", ["resultado"=>$_resultado], true); // render the view into HTML
+
+             $this->load->library('pdf');
+             $pdf = $this->pdf->load();
+             $pdf->SetFooter($_SERVER['HTTP_HOST'].'|{PAGENO}|'.date(DATE_RFC822)); // Add a footer for good measure <img src="https://s.w.org/images/core/emoji/72x72/1f609.png" alt="😉" draggable="false" class="emoji">
+             $pdf->WriteHTML($html); // write the HTML into the PDF
+             $pdf->Output($pdfFilePath, 'F'); // save to file because we can
+         }
+
+         header("Location:". base_url()."/downloads/".$_nombre.".pdf");
+     }
+   }
 }
 

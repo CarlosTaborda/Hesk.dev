@@ -46,6 +46,7 @@
           <a href="<?php echo site_url('equipo/index'); ?>">Crear equipo</a>
           <a href="<?php echo site_url('equipo/modificar'); ?>">Actualizar</a>
           <a href="<?php echo site_url('equipo/addEntrada'); ?>">Agregar Entrada</a>
+          <a href="<?php echo site_url('equipo/consultarHojaVida'); ?>">Consultar Hoja de vida</a>
         </div>
       </div>
       <?php
