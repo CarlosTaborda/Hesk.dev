@@ -126,7 +126,6 @@ class Ticket extends CI_Controller
          $id_ticket=abs(crc32(uniqid()));
 
          $_datos= $this->input->post();
-
          $_datos['id_ticket']=$id_ticket;
          $_datos['fotografias']= !empty($_linkImagenes)? $_linkImagenes : null;
 
@@ -161,7 +160,6 @@ class Ticket extends CI_Controller
       foreach($_correos['correo'] as $correo){
           mail($correo, "Mesa de Ayuda", $_mensaje, $cabeceras);
       }
-      echo "ya";
    }
 
 

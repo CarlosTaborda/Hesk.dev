@@ -27,7 +27,7 @@ function responder(){
   if($("#observacion-respuesta").val()!=""  && $("#observacion-respuesta").val()!=null){
      var mensaje =$("#contenido-ant").html();
      mensaje += "<div class='w3-light-grey w3-border w3-margin-4'>";
-     mensaje += htmlEntities($("#observacion-respuesta").val());
+     mensaje += "<b>Fecha: </b>"+new Date().toLocaleString()+"<br/>"+htmlEntities($("#observacion-respuesta").val());
      mensaje+="</div>";
 
      var id_observacion= $("#observacion-id_observacion").val();

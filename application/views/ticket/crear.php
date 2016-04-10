@@ -70,6 +70,7 @@ echo form_input(["type"=>"text",
                  "value"=>!empty($captcha_usuario)? $captcha_usuario : null,
                  "class"=>"w3-input  w3-border w3-animate-input",
                  "style"=>"width: 70%",
+                 "autocomplete"=>"off"
                  ]
                 );
 echo "<br/>";
