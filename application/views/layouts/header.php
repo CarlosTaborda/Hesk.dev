@@ -44,8 +44,8 @@
       <a href="#">Equipo <i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-indigo w3-border w3-card-4">
           <a href="<?php echo site_url('equipo/index'); ?>">Crear equipo</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+          <a href="<?php echo site_url('equipo/modificar'); ?>">Actualizar</a>
+          <a href="<?php echo site_url('equipo/addEntrada'); ?>">Agregar Entrada</a>
         </div>
       </div>
       <?php

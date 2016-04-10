@@ -18,18 +18,52 @@ class Equipo_model extends CI_Model
   }
 
   public function cargar($_data){
-   $this->id_equipo=$_data["id_equipo"];
+   $this->id_equipo=strtoupper($_data["id_equipo"]);
    $this->activo_fijo=!empty($_data["activo_fijo"])? $_data["activo_fijo"] : "";
-   $this->marca=!empty($_data["marca"])? $_data["marca"] : "";
-   $this->modelo=!empty($_data["modelo"])? $_data["modelo"] : "";
-   $this->fecha_compra=!empty($_data["fecha_compra"])?:$_data["fecha_compra"];
-   $this->asignado_a=!empty($_data["asignado_a"])? $_data["asignado_a"] : "";
+   $this->marca=!empty($_data["marca"])? strtoupper($_data["marca"]) : "";
+   $this->modelo=!empty($_data["modelo"])? strtoupper($_data["modelo"]) : "";
+   $this->fecha_compra=!empty($_data["fecha_compra"])?$_data["fecha_compra"]: "";
+   $this->asignado_a=!empty($_data["asignado_a"])? strtoupper($_data["asignado_a"]) : "";
    $this->sucursal=$_data['sucursal'];
+
    return $this;
   }
 
   public function insertar(){
      $this->db->insert("equipo",$this);
   }
+
+  public function obtenerSeriales(){
+    $this->db->select("id_equipo");
+    $_seriales=$this->convertirArray($this->db->get("equipo")->result_array());
+    return $_seriales['id_equipo'];
+  }
+
+  public function actualizar(){
+    $_variables=get_object_vars($this);
+    foreach($_variables as $key => $valor){
+       if(empty($_variables[$key])){
+         unset($_variables[$key]);
+       }
+    }
+
+   $this->db->where("id_equipo", $_variables['id_equipo']);
+   $this->db->update("equipo", $_variables);
+  }
+
+  private function convertirArray($consulta){
+      if(!empty($consulta)){
+         $_columnas = array_keys($consulta[0]);
+         for($i=0; $i<count($consulta); $i++){
+            foreach($_columnas as $valor){
+               $_filas[$valor][]=$consulta[$i][$valor];
+            }
+         }
+         return $_filas;
+      }
+      else{
+         return false;
+      }
+   }
 }
 

@@ -18,9 +18,14 @@ class Observacion_model extends CI_Model
 
     public function cargar($datos){
 
-       $this->id_ticket=$datos['id_ticket'];
+       if(!empty($datos["id_ticket"])){
+          $this->id_ticket=$datos['id_ticket'];
+       }
+       else{
+          $this->id_ticket=0;
+       }
        if(!empty($datos['id_equipo'])){
-          $this->id_equipo=$datos['id_equipo'];
+          $this->id_equipo=strtoupper($datos['id_equipo']);
        }
        else{
           $this->id_equipo=0;
