@@ -290,7 +290,8 @@ class Ticket extends CI_Controller
            $_linkImagenes[]= base_url('uploads') . '/' . $_infoArchivo['file_name'];
         }
     }
-    echo $_linkImagenes;
+    echo (!empty($_linkImagenes)? $_linkImagenes : "vacío");
     $this->Ticket_model->responderTicket($this->input->post());
   }
 }
+

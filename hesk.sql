@@ -64,7 +64,7 @@ CREATE TABLE `observacion` (
   KEY `observacion_equipo` (`id_equipo`),
   CONSTRAINT `ObservacionEquipo` FOREIGN KEY (`id_equipo`) REFERENCES `equipo` (`id_equipo`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `observacion_ibfk_1` FOREIGN KEY (`id_ticket`) REFERENCES `ticket` (`id_ticket`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +73,7 @@ CREATE TABLE `observacion` (
 
 LOCK TABLES `observacion` WRITE;
 /*!40000 ALTER TABLE `observacion` DISABLE KEYS */;
-INSERT INTO `observacion` VALUES (7,2084954519,'0','Habilitar recibos de caja','dskljhngvfodhgkrjg h gkrjhgkrhgkrjkjfdghkfdjg dg gkjdhgkdfgh','2016-04-04 22:10:54','<a href=\'http://hesk.dev/uploads/2-CATALOGOMARZO_-_copia.jpg\'>http://hesk.dev/uploads/2-CATALOGOMARZO_-_copia.jpg</a><br/><a href=\'http://hesk.dev/uploads/3-CATALOGOMARZO_-_copia.jpg\'>http://hesk.dev/uploads/3-CATALOGOMARZO_-_copia.jpg</a><br/>'),(8,550301037,'0','dlksjflksdfljglkrg','sdfgkmñrlkjgdkjhtjhtklgjhdkltjh','2016-04-06 23:13:22','<a href=\'http://hesk.dev/uploads/2-CATALOGOMARZO_-_copia.jpg\'>http://hesk.dev/uploads/2-CATALOGOMARZO_-_copia.jpg</a><br/><a href=\'http://hesk.dev/uploads/1CATALOGO_MARZO.jpg\'>http://hesk.dev/uploads/1CATALOGO_MARZO.jpg</a><br/>'),(9,1451727511,'0','dfsgkjlrjkñlrejg','fjnkejngfvkergverkgergtgrrth t htr hrthrth hrtrh','2016-04-06 23:19:27',''),(10,1158841399,'0','mndvbmvbvbvrv','Lorem ipsun awkhqdkqwuehfkefgieguf','2016-04-06 23:42:12','');
+INSERT INTO `observacion` VALUES (1,1943675774,'0','ldkfjgldfjglkfdjgnlkgjn','vdsogirkjñofdjgñlkfdgjmlkfdnglkfdng<div class=\"w3-light-blue w3-padding-small w3-border\">Fecha: <b>8/4/2016 15:13:18</b><br>Nombre: <b>Carlos Felipe Aguirre Taborda</b><br>Correo: <b>carlos.aguirre@lagobo.com.co</b><br><b>Comentario: </b><br><p>grtuyhtujytiyu</p></div><div class=\"w3-light-blue w3-padding-small w3-border\">Fecha: <b>8/4/2016 15:17:20</b><br>Nombre: <b>Carlos Felipe Aguirre Taborda</b><br>Correo: <b>carlos.aguirre@lagobo.com.co</b><br><b>Comentario: </b><br><p>grtuyhtujytiyu</p></div><div class=\"w3-light-blue w3-padding-small w3-border\">Fecha: <b>8/4/2016 15:18:42</b><br>Nombre: <b>Carlos Felipe Aguirre Taborda</b><br>Correo: <b>carlos.aguirre@lagobo.com.co</b><br><b>Comentario: </b><br><p>grtuyhtujytiyu</p></div><div class=\"w3-light-blue w3-padding-small w3-border\">Fecha: <b>8/4/2016 15:39:23</b><br>Nombre: <b>Carlos Felipe Aguirre Taborda</b><br>Correo: <b>carlos.aguirre@lagobo.com.co</b><br><b>Comentario: </b><br><p>{weñrklñ{kyñrekjyp5yk</p></div><div class=\"w3-light-blue w3-padding-small w3-border\">Fecha: <b>8/4/2016 15:49:55</b><br>Nombre: <b>Carlos Felipe Aguirre Taborda</b><br>Correo: <b>carlos.aguirre@lagobo.com.co</b><br><b>Comentario: </b><br><p>{weñrklñ{kyñrekjyp5yk</p></div><div class=\"w3-light-blue w3-padding-small w3-border\">Fecha: <b>8/4/2016 15:51:14</b><br>Nombre: <b>Carlos Felipe Aguirre Taborda</b><br>Correo: <b>carlos.aguirre@lagobo.com.co</b><br><b>Comentario: </b><br><p>{weñrklñ{kyñrekjyp5yk</p></div><div class=\"w3-light-blue w3-padding-small w3-border\">Fecha: <b>8/4/2016 16:21:49</b><br>Nombre: <b>Carlos Felipe Aguirre Taborda</b><br>Correo: <b>carlos.aguirre@lagobo.com.co</b><br><b>Comentario: </b><br><p>yuj7j7yj7yuij</p></div><div class=\"w3-light-blue w3-padding-small w3-border\">Fecha: <b>8/4/2016 16:27:43</b><br>Nombre: <b>Carlos Felipe Aguirre Taborda</b><br>Correo: <b>carlos.aguirre@lagobo.com.co</b><br><b>Comentario: </b><br><p>yuj7j7yj7yuij</p></div><div class=\'w3-light-blue w3-padding-small w3-border\'>Fecha: <b>8/4/2016 16:39:16</b><br/>Nombre: <b>Carlos Felipe Aguirre Taborda</b><br/>Correo: <b>carlos.aguirre@lagobo.com.co</b><br/><b>Comentario: </b><br/><p>yuj7j7yj7yuij</p></div>','2016-04-08 17:25:41','');
 /*!40000 ALTER TABLE `observacion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -97,7 +97,7 @@ CREATE TABLE `sucursal` (
 
 LOCK TABLES `sucursal` WRITE;
 /*!40000 ALTER TABLE `sucursal` DISABLE KEYS */;
-INSERT INTO `sucursal` VALUES (102,'PRI'),(103,'COR'),(104,'CIE'),(105,'MLI'),(106,'PLA'),(107,'SAB'),(108,'SIN'),(109,'GRA'),(110,'PBE'),(111,'VIL'),(112,'TAU'),(113,'PGA'),(114,'PBO'),(115,'PLO'),(116,'SEV'),(117,'CHI'),(119,'CAL'),(120,'AGU'),(121,'BAR'),(123,'TUL'),(124,'PER'),(125,'PER'),(126,'PER'),(127,'PER'),(128,'VIR'),(130,'SRO'),(131,'DQS'),(133,'ARM'),(135,'MAN'),(136,'MAN'),(137,'DOR'),(138,'MAG'),(139,'VIL'),(140,'IBA'),(141,'SIN'),(142,'MON'),(143,'IBA'),(144,'ACA'),(148,'CER'),(149,'QUI'),(150,'CER'),(151,'CAR'),(152,'ARM'),(153,'SAH'),(154,'LOR'),(155,'YOP'),(156,'BOG'),(157,'AGU'),(158,'ESP'),(159,'MAR'),(160,'VIL'),(195,'SIN');
+INSERT INTO `sucursal` VALUES (102,'PRI'),(103,'COR'),(104,'CIE'),(105,'MLI'),(106,'PLA'),(107,'SAB'),(108,'SIN'),(109,'GRA'),(110,'PBE'),(111,'VIL'),(112,'TAU'),(113,'PGA'),(114,'PBO'),(115,'PLO'),(116,'SEV'),(117,'CHI'),(119,'CAL'),(120,'AGU'),(121,'BAR'),(123,'TUL'),(124,'PER'),(125,'PER'),(126,'PER'),(127,'PER'),(128,'VIR'),(130,'SRO'),(131,'DQS'),(132,'ARM'),(133,'ARM'),(135,'MAN'),(137,'DOR'),(138,'MAG'),(139,'VIL'),(140,'IBA'),(141,'SIN'),(142,'MON'),(143,'IBA'),(144,'ACA'),(148,'CER'),(149,'QUI'),(150,'CER'),(151,'CAR'),(152,'ARM'),(153,'SAH'),(154,'LOR'),(155,'YOP'),(156,'BOG'),(157,'AGU'),(158,'ESP'),(159,'MAR'),(160,'VIL'),(195,'SIN');
 /*!40000 ALTER TABLE `sucursal` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -128,7 +128,7 @@ CREATE TABLE `ticket` (
 
 LOCK TABLES `ticket` WRITE;
 /*!40000 ALTER TABLE `ticket` DISABLE KEYS */;
-INSERT INTO `ticket` VALUES (550301037,'Prueba Dos','carlos.aguirre@lagobo.com.co','nuevo','oportudata',102,''),(1158841399,'Ticket Dos','carlos.aguirre@lagobo.com.co','nuevo','oportudata',102,''),(1418195263,'Andres Olarte','carlos.aguirre@lagobo.com.co','nuevo','oportudata',102,''),(1451727511,'Carlos Taborda Aguirre','prueba.contabilidad@lagobo.com.co','nuevo','oportudata',102,''),(2084954519,'Ticket para prueba de aurora','blablabla@lagobo.com','nuevo','aurora',102,'prueba.contabilidad@lagobo.com.co');
+INSERT INTO `ticket` VALUES (1943675774,'Prueba de Contabilidad','prueba.contabilidad@lagobo.com.co','Nuevo','oportudata',102,'carlos.aguirre@lagobo.com.co');
 /*!40000 ALTER TABLE `ticket` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,4 +171,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-06 17:29:59
+-- Dump completed on 2016-04-09 17:36:13

@@ -81,21 +81,21 @@ echo form_close();
 
 ?>
 <script type="text/javascript">
-$(document).ready(
-   function(){
-      $('label[for=observacion-id_equipo], #observacion-id_equipo').hide();
-      $('#ticket-categoria').on('change',
-         function(){
-            var valor = $('#ticket-categoria').val();
-            if(valor=="hardware"){
-               $('label[for=observacion-id_equipo], #observacion-id_equipo').show('2500');
+   $(document).ready(
+      function(){
+         $('label[for=observacion-id_equipo], #observacion-id_equipo').hide();
+         $('#ticket-categoria').on('change',
+            function(){
+               var valor = $('#ticket-categoria').val();
+               if(valor=="hardware"){
+                  $('label[for=observacion-id_equipo], #observacion-id_equipo').show('2500');
+               }
+               else{
+                  $('label[for=observacion-id_equipo], #observacion-id_equipo').hide('2500');
+               }
             }
-            else{
-               $('label[for=observacion-id_equipo], #observacion-id_equipo').hide('2500');
-            }
-         }
-      );
-   }
-);
+         );
+      }
+   );
 </script>
 

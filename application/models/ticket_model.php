@@ -132,18 +132,19 @@ class Ticket_model extends CI_Model
          $_update=[
             "mensaje"=>$datos['mensaje']
          ];
-         $this->db->where("id_ticket",$datos['id_ticket']);
+         //$this->db->where("id_ticket",$datos['id_ticket']);
          $this->db->where("id_observacion", $datos['id_observacion']);
          $this->db->update('observacion', $_update);
 
          unset($_update["mensaje"]);
-
-         $_update=[
-            "estado"=>$datos["estado"],
-            "email_responsable"=>$datos['asignadoA']
-         ];
-         $this->db->where("id_ticket",$datos['id_ticket']);
-         $this->db->update('ticket', $_update);
+         if(!empty($datos["estado"]) && !empty($datos['asignadoA'])){
+            $_update=[
+               "estado"=>$datos["estado"],
+               "email_responsable"=>$datos['asignadoA']
+            ];
+            $this->db->where("id_ticket",$datos['id_ticket']);
+            $this->db->update('ticket', $_update);
+         }
       }
    }
 
@@ -155,3 +156,4 @@ class Ticket_model extends CI_Model
      return $_resultado['correo'];
    }
 }
+

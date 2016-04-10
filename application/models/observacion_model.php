@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 class Observacion_model extends CI_Model
 {
 
@@ -24,7 +26,7 @@ class Observacion_model extends CI_Model
           $this->id_equipo=0;
        }
        $this->tema=$datos['tema'];
-       $this->mensaje=$datos['mensaje'];
+       $this->mensaje="<div class='w3-border w3-margin-4 w3-light-grey'>" . $datos['mensaje'] . "</div>";
        $this->fecha=date("Y-m-d H:i:s");
        $this->fotografias="";
 
