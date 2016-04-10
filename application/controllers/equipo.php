@@ -53,7 +53,9 @@ class Equipo extends CI_Controller
    }
 
    public function insertarEntrada(){
-      $this->Observacion_model->cargar($this->input->post())->insertar();
+      $_post=$this->input->post();
+      $_post["mensaje"]= $this->session->userdata("correo")."<br/>" . $this->session->userdata("nombre"). "<br/><br/>". $_post["mensaje"];
+      $this->Observacion_model->cargar($_post)->insertar();
       $this->load->view("layouts/mensaje",[
                                           "url"=>site_url("equipo/addEntrada"),
                                           "tiempo"=>4,
