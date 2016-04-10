@@ -16,4 +16,9 @@ class Equipo extends CI_Controller
   public function index(){
     $this->load->view('equipo/index', ["sucursales"=>$this->Sucursal_model->obtenerSucursales()]);
   }
+
+  public function insertar(){
+     var_dump($this->input->post());
+  }
 }
+

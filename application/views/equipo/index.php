@@ -18,7 +18,7 @@ $this->load->view('layouts/header', ["head_files"=>$head_files]);
 </div>
 
 
-  <form class="w3-content w3-border w3-card-4  w3-form" style="width:80%">
+  <form class="w3-content w3-border w3-card-4  w3-form" style="width:80%" method="post" action="<?php echo site_url('equipo/insertar'); ?>">
       <h2 class="w3-indigo w3-center">Crear un equipo</h2>
       <label class="w3-label" for="equipo-id_equipo">Serial del equipo:</label><br/>
       <input type="text" class="w3-input w3-border" name="id_equipo" id="equipo-id_equipo" style="width: 97%" required />
@@ -64,7 +64,7 @@ $this->load->view('layouts/header', ["head_files"=>$head_files]);
           dayNamesShort: ['Dom','Lun','Mar','Mi&eacute;','Juv','Vie','S&aacute;b'],
           dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','S&aacute;'],
           weekHeader: 'Sm',
-          dateFormat: 'dd/mm/yy',
+          dateFormat: 'yy-mm-dd',
           firstDay: 1,
           isRTL: false,
           showMonthAfterYear: false,
@@ -79,3 +79,4 @@ $this->load->view('layouts/header', ["head_files"=>$head_files]);
 <?php
 $this->load->view('layouts/footer');
 ?>
+
