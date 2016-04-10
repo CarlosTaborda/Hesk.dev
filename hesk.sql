@@ -25,10 +25,10 @@ DROP TABLE IF EXISTS `equipo`;
 CREATE TABLE `equipo` (
   `id_equipo` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `activo_fijo` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `marca` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `modelo` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `fecha_compra` date NOT NULL,
-  `asignado_a` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `marca` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `modelo` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fecha_compra` date DEFAULT NULL,
+  `asignado_a` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sucursal` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id_equipo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -40,7 +40,7 @@ CREATE TABLE `equipo` (
 
 LOCK TABLES `equipo` WRITE;
 /*!40000 ALTER TABLE `equipo` DISABLE KEYS */;
-INSERT INTO `equipo` VALUES ('0',NULL,'No existe equipo','Es una entrada por defecto','2016-03-01','Nadie','102');
+INSERT INTO `equipo` VALUES ('0',NULL,'No existe equipo','Es una entrada por defecto','2016-03-01','Nadie','102'),('1','EC08903','Dell','12rt','2016-04-14','Angie Cordoba','102'),('10','EC09876','Compaq','gyt34','0000-00-00','Fernando sepulveda','100'),('11','EC09876','Compaq','gyt34','0000-00-00','Erika sepulveda','100'),('2','EC011234','Dell','12rt','2015-12-01','GABRIEL MOSQUERA','103'),('5','EC011234','Dell','12rt','2015-12-01','','100');
 /*!40000 ALTER TABLE `equipo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,7 +64,7 @@ CREATE TABLE `observacion` (
   KEY `observacion_equipo` (`id_equipo`),
   CONSTRAINT `ObservacionEquipo` FOREIGN KEY (`id_equipo`) REFERENCES `equipo` (`id_equipo`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `observacion_ibfk_1` FOREIGN KEY (`id_ticket`) REFERENCES `ticket` (`id_ticket`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +73,7 @@ CREATE TABLE `observacion` (
 
 LOCK TABLES `observacion` WRITE;
 /*!40000 ALTER TABLE `observacion` DISABLE KEYS */;
-INSERT INTO `observacion` VALUES (3,1308459986,'0','fdglkdgltkg','<div class=\'w3-border w3-margin-4 w3-light-grey\'>descripción descripción descripción descripción descripción descripción descripción descripción </div>','2016-04-09 20:57:57',''),(4,432003196,'0','Prueba 2','<div class=\"w3-border w3-margin-4 w3-light-grey\">$data[\'errors\'] $data[\'errors\'] $data[\'errors\'] $data[\'errors\'] $data[\'errors\'] $data[\'errors\'] $data[\'errors\'] $data[\'errors\'] $data[\'errors\'] $data[\'errors\'] $data[\'errors\'] $data[\'errors\'] </div><div class=\"w3-light-blue w3-padding-small w3-border\">Fecha: <b>9/4/2016, 9:16:13 p.m.</b><br>Nombre: <b>Carlos Felipe Aguirre Taborda</b><br>Correo: <b>carlos.aguirre@lagobo.com.co</b><br><b>Comentario: </b><br><p>Hola</p></div><div class=\"w3-light-blue w3-padding-small w3-border\">Fecha: <b>9/4/2016, 9:16:31 p.m.</b><br>Nombre: <b>Carlos Felipe Aguirre Taborda</b><br>Correo: <b>carlos.aguirre@lagobo.com.co</b><br><b>Comentario: </b><br><p>Hola 2</p></div><div class=\'w3-light-blue w3-padding-small w3-border\'>Fecha: <b>9/4/2016, 9:18:25 p.m.</b><br/>Nombre: <b>Carlos Felipe Aguirre Taborda</b><br/>Correo: <b>carlos.aguirre@lagobo.com.co</b><br/><b>Comentario: </b><br/><p>Hola 3</p></div>','2016-04-09 21:15:01','<a href=\'http://hesk.dev/uploads/2.jpg\'>http://hesk.dev/uploads/2.jpg</a><br/>');
+INSERT INTO `observacion` VALUES (3,1308459986,'0','fdglkdgltkg','<div class=\'w3-border w3-margin-4 w3-light-grey\'>descripción descripción descripción descripción descripción descripción descripción descripción </div>','2016-04-09 20:57:57',''),(4,432003196,'0','Prueba 2','<div class=\"w3-border w3-margin-4 w3-light-grey\">$data[\'errors\'] $data[\'errors\'] $data[\'errors\'] $data[\'errors\'] $data[\'errors\'] $data[\'errors\'] $data[\'errors\'] $data[\'errors\'] $data[\'errors\'] $data[\'errors\'] $data[\'errors\'] $data[\'errors\'] </div><div class=\"w3-light-blue w3-padding-small w3-border\">Fecha: <b>9/4/2016, 9:16:13 p.m.</b><br>Nombre: <b>Carlos Felipe Aguirre Taborda</b><br>Correo: <b>carlos.aguirre@lagobo.com.co</b><br><b>Comentario: </b><br><p>Hola</p></div><div class=\"w3-light-blue w3-padding-small w3-border\">Fecha: <b>9/4/2016, 9:16:31 p.m.</b><br>Nombre: <b>Carlos Felipe Aguirre Taborda</b><br>Correo: <b>carlos.aguirre@lagobo.com.co</b><br><b>Comentario: </b><br><p>Hola 2</p></div><div class=\'w3-light-blue w3-padding-small w3-border\'>Fecha: <b>9/4/2016, 9:18:25 p.m.</b><br/>Nombre: <b>Carlos Felipe Aguirre Taborda</b><br/>Correo: <b>carlos.aguirre@lagobo.com.co</b><br/><b>Comentario: </b><br/><p>Hola 3</p></div>','2016-04-09 21:15:01','<a href=\'http://hesk.dev/uploads/2.jpg\'>http://hesk.dev/uploads/2.jpg</a><br/>'),(5,0,'10','Prueba 2','<div class=\'w3-border w3-margin-4 w3-light-grey\'>mensaje mensaje</div>','2016-04-10 13:40:23',''),(6,0,'10','Prueba 2','<div class=\'w3-border w3-margin-4 w3-light-grey\'>mensaje mensaje</div>','2016-04-10 13:42:11','');
 /*!40000 ALTER TABLE `observacion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -97,7 +97,7 @@ CREATE TABLE `sucursal` (
 
 LOCK TABLES `sucursal` WRITE;
 /*!40000 ALTER TABLE `sucursal` DISABLE KEYS */;
-INSERT INTO `sucursal` VALUES (100,'OFICINAS-PER'),(102,'PRI'),(103,'COR'),(104,'CIE'),(105,'MLI'),(106,'PLA'),(107,'SAB'),(108,'SIN'),(109,'GRA'),(110,'PBE'),(111,'VIL'),(112,'TAU'),(113,'PGA'),(114,'PBO'),(115,'PLO'),(116,'SEV'),(117,'CHI'),(119,'CAL'),(120,'AGU'),(121,'BAR'),(123,'TUL'),(124,'PER'),(125,'PER'),(126,'PER'),(127,'PER'),(128,'VIR'),(130,'SRO'),(131,'DQS'),(132,'ARM'),(133,'ARM'),(135,'MAN'),(137,'DOR'),(138,'MAG'),(139,'VIL'),(140,'IBA'),(141,'SIN'),(142,'MON'),(143,'IBA'),(144,'ACA'),(148,'CER'),(149,'QUI'),(150,'CER'),(151,'CAR'),(152,'ARM'),(153,'SAH'),(154,'LOR'),(155,'YOP'),(156,'BOG'),(157,'AGU'),(158,'ESP'),(159,'MAR'),(160,'VIL'),(195,'SIN');
+INSERT INTO `sucursal` VALUES (100,'OFICINAS-PER'),(101,'BOD-SISTEMAS'),(102,'PRI'),(103,'COR'),(104,'CIE'),(105,'MLI'),(106,'PLA'),(107,'SAB'),(108,'SIN'),(109,'GRA'),(110,'PBE'),(111,'VIL'),(112,'TAU'),(113,'PGA'),(114,'PBO'),(115,'PLO'),(116,'SEV'),(117,'CHI'),(119,'CAL'),(120,'AGU'),(121,'BAR'),(123,'TUL'),(124,'PER'),(125,'PER'),(126,'PER'),(127,'PER'),(128,'VIR'),(130,'SRO'),(131,'DQS'),(132,'ARM'),(133,'ARM'),(135,'MAN'),(137,'DOR'),(138,'MAG'),(139,'VIL'),(140,'IBA'),(141,'SIN'),(142,'MON'),(143,'IBA'),(144,'ACA'),(148,'CER'),(149,'QUI'),(150,'CER'),(151,'CAR'),(152,'ARM'),(153,'SAH'),(154,'LOR'),(155,'YOP'),(156,'BOG'),(157,'AGU'),(158,'ESP'),(159,'MAR'),(160,'VIL'),(195,'SIN');
 /*!40000 ALTER TABLE `sucursal` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -128,7 +128,7 @@ CREATE TABLE `ticket` (
 
 LOCK TABLES `ticket` WRITE;
 /*!40000 ALTER TABLE `ticket` DISABLE KEYS */;
-INSERT INTO `ticket` VALUES (432003196,'Johana Bobadilla','andyfr@boxmail.co','Nuevo','oportudata',100,'carlos.aguirre@lagobo.com.co'),(1308459986,'Andres Olarte','carlos.aguirre@lagobo.com.co','nuevo','oportudata',100,'');
+INSERT INTO `ticket` VALUES (0,'','','','',100,''),(432003196,'Johana Bobadilla','andyfr@boxmail.co','Nuevo','oportudata',100,'carlos.aguirre@lagobo.com.co'),(1308459986,'Andres Olarte','carlos.aguirre@lagobo.com.co','nuevo','oportudata',100,'');
 /*!40000 ALTER TABLE `ticket` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,4 +171,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-09 21:30:10
+-- Dump completed on 2016-04-10 16:41:37
