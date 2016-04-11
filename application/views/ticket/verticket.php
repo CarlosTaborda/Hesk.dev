@@ -61,7 +61,7 @@ echo "</div>";
 for($i=0; $i<count($resultado['id_ticket']); $i++){
    echo "<div class='w3-card-2 w3-border w3-padding-medium w3-content' style='width:95%'>";
    echo "<h2 class='w3-indigo w3-center'>Tickets</h2>";
-   echo "<button class='w3-btn w3-blue w3-margin-2'onclick='borrarTicket(this)' value='".$resultado['id_ticket'][$i]."'>Eliminar</button>";
+   echo "<button class='w3-btn w3-blue w3-margin-2 tickets'onclick='borrarTicket(this)' value='".$resultado['id_ticket'][$i]."'>Eliminar</button>";
    echo "<button class='w3-btn w3-blue w3-margin-2'onclick='mostrarResponder()' >Responder</button><br/>";
    echo "<b class='w3-text-black'>Código de seguimiento: </b>". $resultado['id_ticket'][$i] . "<br/>";
    echo "<b class='w3-text-black'>Nombre: </b>" . $resultado['nombre'][$i] . "<br/>";
@@ -168,5 +168,15 @@ $this->load->view('layouts/footer');
    function ocultarResponder(){
       $('#form_responder').hide('1500');
    }
-</script>
 
+   $(document).ready(
+     function(){
+       var botones=document.getElementsByClassName('tickets');
+       for(var i=0; i<botones.length; i++){
+         if(botones.item(i).value==0 || botones.item(i).value=="0" ){
+           botones.item(i).parentElement.style.display="none";
+         }
+       }
+     }
+   );
+</script>
