@@ -72,5 +72,10 @@ class Equipo_model extends CI_Model
       $this->db->where("id_ticket",0);
       return $this->convertirArray($this->db->get("observacion")->result_array());
    }
-}
 
+   public function consultarEquipo($id_equipo){
+     $this->db->select("id_equipo,activo_fijo,marca,modelo,fecha_compra,asignado_a,sucursal");
+     $this->db->where("id_equipo",$id_equipo);
+     return $this->convertirArray($this->db->get("equipo")->result_array());
+   }
+}

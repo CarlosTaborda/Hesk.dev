@@ -21,7 +21,7 @@ $this->load->view('layouts/header', ["head_files"=>$head_files]);
   <form class="w3-content w3-border w3-card-4  w3-form" style="width:80%" method="post" action="<?php echo site_url('equipo/actualizar'); ?>">
       <h2 class="w3-indigo w3-center">Actualizar un equipo</h2>
       <label class="w3-label" for="equipo-id_equipo">Serial del equipo:</label><br/>
-      <input type="text" class="w3-input w3-border" name="id_equipo" id="equipo-id_equipo" style="width: 97%" list="seriales" required />
+      <input type="text" class="w3-input w3-border" name="id_equipo" id="equipo-id_equipo" style="width: 97%" list="seriales" autocomplete="off" required />
          <datalist id="seriales">
             <?php
                foreach($seriales as $valor){
@@ -88,4 +88,3 @@ $this->load->view('layouts/header', ["head_files"=>$head_files]);
 <?php
 $this->load->view('layouts/footer');
 ?>
-

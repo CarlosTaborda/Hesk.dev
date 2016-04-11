@@ -18,7 +18,7 @@ $this->load->view('layouts/header', ["head_files"=>$head_files]);
 <form class="w3-boder w3-card-4 w3-padding animated wobble" style="width: 76%; margin: auto" method="post" action="<?php echo site_url('equipo/insertarEntrada'); ?>">
    <h2 class="w3-center w3-indigo">Agregar Entrada</h2>
    <label class="w3-label">Serial:</label>
-   <input type="text" name="id_equipo" id="observacion-id_equipo" required class="w3-input w3-border" style="width: 95%" list="seriales"/>
+   <input type="text" name="id_equipo" id="observacion-id_equipo" required class="w3-input w3-border" style="width: 95%" list="seriales" autocomplete="off" />
    <datalist id="seriales">
             <?php
                foreach($seriales as $valor){
@@ -39,4 +39,3 @@ $this->load->view('layouts/header', ["head_files"=>$head_files]);
 <?php
    $this->load->view("layouts/footer");
 ?>
-

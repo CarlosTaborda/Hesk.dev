@@ -96,5 +96,29 @@ class Equipo extends CI_Controller
          header("Location:". base_url()."/downloads/".$_nombre.".pdf");
      }
    }
-}
 
+   public function formularioConsultarEquipo(){
+     $this->load->view("equipo/formconsultar", ["seriales"=>$this->Equipo_model->obtenerSeriales()]);
+   }
+
+   public function traerEquipo($id_equipo=""){
+     if(!empty($id_equipo)){
+       $_respuesta=$this->Equipo_model->consultarEquipo($id_equipo);
+     }
+     else{
+       $id_equipo=$this->input->post("id_equipo");
+       $_respuesta=$this->Equipo_model->consultarEquipo($id_equipo);
+     }
+     if(empty($_respuesta)){
+       $this->load->view("layouts/mensaje",[
+         "url"=>site_url("equipo/formularioConsultarEquipo"),
+         "mensaje"=>"Error el equipo no se ha encontrado en<br/>la base de datos.",
+         "tiempo"=>"3",
+         "titulo"=>"Error"
+       ]);
+     }
+     else{
+       $this->load->view("equipo/mostrarEquipo", ["respuesta"=>$_respuesta]);
+     }
+   }
+}
