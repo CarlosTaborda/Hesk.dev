@@ -129,7 +129,7 @@ $this->load->view('layouts/footer');
 
       if(mensaje.val()!="" && mensaje.val()!=null){
          var nuevoMensaje=antMensajes.html();
-         nuevoMensaje+="<div class='w3-light-blue w3-padding-small w3-border'>";
+         nuevoMensaje+="<div class='w3-cyan w3-padding-small w3-border' style='width: 98%; margin:2px'>";
          nuevoMensaje+="Fecha: <b>"+new Date().toLocaleString()+"</b><br/>";
          nuevoMensaje+="Nombre: <b>"+nombre+"</b><br/>";
          nuevoMensaje+="Correo: <b>"+correo+"</b><br/>";

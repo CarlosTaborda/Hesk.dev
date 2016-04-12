@@ -41,13 +41,23 @@
       <a href='<?php echo site_url("sucursal"); ?>'>Sucursal</a>
       <a href='<?php echo site_url("usuario/index"); ?>'>Ingresar</a>
       <div class="w3-dropdown-hover">
-      <a href="#">Equipo <i class="fa fa-caret-down"></i></a>
+      <a href="#">Equipo <i class="material-icons">&#xE313;</i></a>
       <div class="w3-dropdown-content w3-indigo w3-border w3-card-4">
           <a href="<?php echo site_url('equipo/index'); ?>">Crear Equipo</a>
           <a href="<?php echo site_url('equipo/modificar'); ?>">Actualizar</a>
           <a href="<?php echo site_url('equipo/addEntrada'); ?>">Agregar Entrada</a>
           <a href="<?php echo site_url('equipo/consultarHojaVida'); ?>">Consultar Hoja de Vida</a>
           <a href="<?php echo site_url('equipo/formularioConsultarEquipo');?>">Consultar Equipo</a>
+        </div>
+      </div>
+      <div class="w3-dropdown-hover">
+      <a href="#">Usuarios <i class="material-icons">&#xE313;</i></a>
+      <div class="w3-dropdown-content w3-indigo w3-border w3-card-4">
+          <a href="<?php echo site_url('usuario/habilitar'); ?>" class="w3-hover-blue">Habilitar Usuarios</a>
+          <a href="<?php echo site_url('equipo/modificar'); ?>" class="w3-hover-blue" >Actualizar</a>
+          <a href="<?php echo site_url('equipo/addEntrada'); ?>" class="w3-hover-blue" >Agregar Entrada</a>
+          <a href="<?php echo site_url('equipo/consultarHojaVida'); ?>" class="w3-hover-blue" >Consultar Hoja de Vida</a>
+          <a href="<?php echo site_url('equipo/formularioConsultarEquipo');?>" class="w3-hover-blue" >Consultar Equipo</a>
         </div>
       </div>
       <?php

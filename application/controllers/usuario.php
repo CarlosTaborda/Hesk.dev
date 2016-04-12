@@ -103,5 +103,22 @@ class Usuario extends CI_Controller
       header("Location: " . base_url());
    }
 
-}
+   public function habilitar(){
+     if(empty($this->input->post())){
+       $_respuesta=$this->Usuario_model->consultarUsuariosInactivos();
+       $this->load->view("usuario/habilitar", ["respuesta"=>$_respuesta]);
+     }
+     else{
+        switch ($this->input->post('accion')) {
+          case 'habilitar':
+              $this->Usuario_model->habilitar($this->input->post('correo'), $this->input->post('rol'));
+            break;
 
+          default:
+            # code...
+            break;
+        }
+     }
+   }
+
+}
