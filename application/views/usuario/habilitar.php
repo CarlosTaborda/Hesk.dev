@@ -1,6 +1,9 @@
 <?php
 $this->load->view("layouts/header");
-echo '<div style="width: 80%; margin: auto">';
+echo "<div class='w3-center w3-margin-12 w3-animate-opacity'>";
+echo "<img src='".base_url('assets/img/habilitar-icon.png')."'></img>";
+echo "</div>";
+echo '<div style="width: 80%; margin: auto; min-height:12em" class="animated flipInX">';
 print($respuesta);
 echo "</div>";
 $this->load->view("layouts/footer");
