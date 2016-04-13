@@ -62,7 +62,7 @@ for($i=0; $i<count($resultado['id_ticket']); $i++){
    echo "<div class='w3-card-2 w3-border w3-padding-medium w3-content' style='width:95%'>";
    echo "<h2 class='w3-indigo w3-center'>Tickets</h2>";
    echo "<button class='w3-btn w3-blue w3-margin-2 tickets'onclick='borrarTicket(this)' value='".$resultado['id_ticket'][$i]."'>Eliminar</button>";
-   echo "<button class='w3-btn w3-blue w3-margin-2'onclick='mostrarResponder()' >Responder</button><br/>";
+   echo "<button class='w3-btn w3-blue w3-margin-2'onclick='mostrarResponder(\"". $resultado['id_ticket'][$i] ."\")' >Responder</button><br/>";
    echo "<b class='w3-text-black'>Código de seguimiento: </b>". $resultado['id_ticket'][$i] . "<br/>";
    echo "<b class='w3-text-black'>Nombre: </b>" . $resultado['nombre'][$i] . "<br/>";
    echo "<b class='w3-text-black'>Fecha: </b><b class='w3-text-indigo'>" . $resultado['fecha'][$i] . "</b><br/>";
@@ -74,7 +74,7 @@ for($i=0; $i<count($resultado['id_ticket']); $i++){
    echo "<b class='w3-text-black'>Tema: </b>" . $resultado['tema'][$i] . "<br/>";
    echo "<b class='w3-text-black'>Adjuntos: </b><br/>" . $resultado['fotografias'][$i] . "<br/>";
    echo "<br/><b class='w3-text-black'>Contenido: </b><br/><article style='max-height:14em; overflow-y:scroll' id='mensaje_anterior".$resultado['id_ticket'][$i]."'>" . $resultado['mensaje'][$i] . "</article><br/>";
-   echo "<div id='form_responder' style='display:none'>";
+   echo "<div id='form_responder".$resultado['id_ticket'][$i] ."' style='display:none'>";
    echo "<label class='w3-label'>Cambiar Estado:</label><br/>";
    echo "<select name='estado_update' id='estado_update' class='w3-select w3-border'>";
    echo "<option value='Nuevo'>Nuevo</option>";
@@ -92,7 +92,7 @@ for($i=0; $i<count($resultado['id_ticket']); $i++){
    //echo "<label class='w3-label'>Adjuntos: </label>";
    //echo "<input type='file' name='fotografias'  class='w3-input w3-border' style='width:95%' accept='image/*' id='update-fotografias' class='fileUpload'/>";
    echo "<button class='w3-btn w3-indigo w3-margin-8' value='". $resultado['id_ticket'][$i] ."' onclick='actualizarTicket(this.value)' >Responder</button>";
-   echo "<button class='w3-btn w3-indigo w3-margin-8' onclick='ocultarResponder()' >Ocultar</button>";
+   echo "<button class='w3-btn w3-indigo w3-margin-8' onclick='ocultarResponder(\"". $resultado['id_ticket'][$i] ."\")' >Ocultar</button>";
    echo "</div>";
    echo "</div>";
    echo "<div style='height:1em'></div>";
@@ -161,12 +161,12 @@ $this->load->view('layouts/footer');
        location.reload();
    }
 
-   function mostrarResponder(){
-      $('#form_responder').show('1500');
+   function mostrarResponder(identificador){
+      $('#form_responder'+identificador).show('1500');
    }
 
-   function ocultarResponder(){
-      $('#form_responder').hide('1500');
+   function ocultarResponder(identificador){
+      $('#form_responder'+identificador).hide('1500');
    }
 
    $(document).ready(
