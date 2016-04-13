@@ -103,10 +103,17 @@ class Usuario extends CI_Controller
       header("Location: " . base_url());
    }
 
-   public function habilitar(){
+   public function accion($tipo){
      if(empty($this->input->post())){
-       $_respuesta=$this->Usuario_model->consultarUsuariosInactivos();
-       $this->load->view("usuario/habilitar", ["respuesta"=>$_respuesta]);
+       switch($tipo){
+         case "habilitar":
+            $_respuesta=$this->Usuario_model->consultarUsuariosInactivos();
+            break;
+         default:
+            $_respuesta=$this->Usuario_model->consultarTodosUsuarios();
+            break;
+       }
+       $this->load->view("usuario/accion", ["respuesta"=>$_respuesta, "tipo"=>$tipo]);
      }
      else{
         switch ($this->input->post('accion')) {
@@ -115,7 +122,7 @@ class Usuario extends CI_Controller
             break;
 
           default:
-            # code...
+              $this->Usuario_model->eliminar($this->input->post('correo'), $this->input->post('rol'));
             break;
         }
      }

@@ -124,9 +124,25 @@ class Usuario_model extends CI_Model
      return $this->table->generate($this->db->get("usuario"));
    }
 
+   public function consultarTodosUsuarios(){
+     $this->db->select("nombre,correo,rol,categoria");
+     $this->table->set_template(['table_open'=>'<table class="w3-bordered w3-table w3-border w3-hoverable w3-striped">',
+                                 'heading_cell_start'=>'<th class="w3-indigo">',
+                                 'row_start' => '<tr onclick="habilitar(this)">'
+                                ]);
+     return $this->table->generate($this->db->get("usuario"));
+   }
+
    public function habilitar($correo, $rol){
      $this->db->where("correo", $correo);
      $this->db->where("rol", $rol);
      $this->db->update("usuario",["activo"=>"1"]);
    }
+
+   public function eliminar($correo, $rol){
+     $this->db->where("correo", $correo);
+     $this->db->where("rol", $rol);
+     $this->db->delete('usuario');
+   }
+
 }
