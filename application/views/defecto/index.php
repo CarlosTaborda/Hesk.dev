@@ -19,7 +19,7 @@
     a la respuesta más rápida ademas de la mejor posible ya que esta estará sujeta a posterior revisión y verificación por parte
     de quien corresponda.
   </p><br/><br/><br/>
-  <article id="crear" class="w3-card-2 w3-padding" style="width: 90%; margin: auto">
+  <article id="crear" class="w3-card-2 w3-padding w3-leftbar" style="width: 90%; margin: auto; border-color: #00bcd4 !important">
     <h3 class="w3-center w3-text-indigo">¿Cómo crear un ticket?</h3>
     <ul style="list-style-type: decimal">
       <li>
@@ -61,8 +61,10 @@
       </li>
     </ul>
   </article>
+
   <br/><br/><br/>
-  <article id="consultar" class="w3-card-2 w3-padding" style="width: 90%; margin: auto">
+
+  <article id="consultar" class="w3-card-2 w3-padding w3-leftbar" style="width: 90%; margin: auto; border-color: #00bcd4 !important">
     <h3 class="w3-center w3-text-indigo">¿Cómo consultar un ticket?</h3>
     <ul style="list-style-type: decimal">
       <li>
@@ -94,4 +96,5 @@
       </li>
     </ul>
   </article>
+  <br/><br/>
 </div>
