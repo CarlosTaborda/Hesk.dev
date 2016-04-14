@@ -1,6 +1,9 @@
 <!DOCTYPE HTML>
 <HTML lang="es">
     <head>
+        <link rel="shortcut icon" href="<?php echo base_url('assets/img/favicon.png'); ?>"  />
+        <link rel="icon" type="image/png" href="<?php echo base_url('assets/img/favicon.png'); ?>" />
+        <title>Mesa de Ayuda - Lagobo Distribuciones S.A</title>
         <link rel='stylesheet' href='<?php echo base_url("assets/css/w3.css"); ?>' />
         <link rel='stylesheet' href='<?php echo base_url("assets/css/animate.css"); ?>' />
         <script type='text/javascript' src='<?php echo base_url("assets/js/jquery.js"); ?>'></script>
