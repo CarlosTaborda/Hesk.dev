@@ -11,10 +11,11 @@ ini_set('display_errors', 1);
 
 echo validation_errors();
 echo form_open('sucursal/insertar',[
-   "class"=>"w3-form w3-card-4 w3-border w3-content",
+   "class"=>"w3-form w3-card-4 w3-border w3-content animated fadeInDown",
    "style"=>"width:80%"
 ]);
 
+echo "<h2 class='w3-indigo w3-center'>Crear una Sucursal</h2>";
 echo form_label("Código númerico de sucursal: <br/>", "sucursal-id_sucursal", [
                                                                               "class"=>"w3-label"
                                                                               ]);
@@ -40,4 +41,3 @@ echo form_submit("crear", "Crear", "class='w3-btn w3-indigo'");
 echo "</div>";
 echo form_close();
 ?>
-

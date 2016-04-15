@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 
 
 echo form_open("ticket/consultar", ["class"=>"w3-form w3-center w3-card-2 animated rotateIn", "style"=>"width: 80%; margin: auto"]);
-
+echo "<h2 class='w3-indigo w3-center'>Consultar un Ticket</h2>";
 echo form_label("Código de ticket:<br/>", "ticket-id_ticket", ["class"=>"w3-label"]);
 echo form_input([
    "type"=>"number",

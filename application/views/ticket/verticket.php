@@ -36,6 +36,11 @@ echo form_open('ticket/verTickets', [
          <option value="ASC">Más antiguo</option>
       </select>
    </article>
+
+   <article class="w3-col l11 m11 s11" >
+     <label class="w3-label" for="ticket-id_sucursal" >Sucursal:</label>
+     <input type="number" class="w3-input w3-border" name="id_sucursal" min="100" max="200" id="ticket-id_sucursal"/>
+   </article>
 </div>
 
 

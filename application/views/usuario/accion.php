@@ -22,6 +22,7 @@ function habilitar(elemento){
         var mensaje="Usuario habilitado.";
       break;
   }
+
   if(confirm("¿Desea "+accion+" este usuario?")){
     var ajax=new XMLHttpRequest();
     ajax.onreadystatechange=function(){

@@ -142,7 +142,7 @@ class Ticket extends CI_Controller
          $this->load->view('layouts/mensaje', [
                         "url"=>current_url(),
                         'tiempo'=>"7",
-                        "mensaje"=>"Su ticket ha sido creado satisfactoriamente<br/>su id de rastreo es :" . $id_ticket,
+                        "mensaje"=>"Su ticket ha sido creado satisfactoriamente<br/>su id de rastreo es: " . $id_ticket,
                      ]);
 
 
@@ -292,4 +292,3 @@ class Ticket extends CI_Controller
     $this->Ticket_model->responderTicket($this->input->post());
   }
 }
-
