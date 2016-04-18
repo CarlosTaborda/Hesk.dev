@@ -247,22 +247,50 @@ class Ticket extends CI_Controller
       $this->load->view('layouts/footer');
    }
 
-   public function verTickets(){
+   public function verTickets($inicio=null){
       $_correos=$this->Usuario_model->obtenerTodosCorreos();
 
       if(!empty($this->input->post('fecha')) && $this->Ticket_model->verTickets($this->input->post())){
-         $_respuesta = $this->Ticket_model->verTickets($this->input->post());
-         $config['base_url'] = site_url('ticket/verTickets');
+         $_respuesta = $this->Ticket_model->verTickets($this->input->post(), $inicio);
+         $config['base_url'] = site_url('ticket/verTickets/');
          $config['total_rows'] = $_respuesta[1];
          $config['per_page'] = 10;
+         $config["uri_segment"] = 3;
+         $config['first_tag_open'] = '<div class="w3-btn w3-indigo">';
+         $config['first_tag_close'] = '</div>';
+         $config['last_tag_open'] = '<div class="w3-btn w3-indigo">';
+         $config['last_tag_close'] = '</div>';
+         $config['prev_link'] = '<i class="material-icons">&#xE045;</i>';
+         $config['next_link'] = '<i class="material-icons">&#xE044;</i>';
+         $config['cur_tag_open'] = '<div class="w3-btn w3-white">';
+         $config['cur_tag_close'] = '</div>';
+         $config['num_tag_open'] = '<div class="w3-btn w3-blue">';
+         $config['num_tag_close'] = '</div>';
+         $config['first_link'] = 'Primero';
+         $config['last_link'] = 'Ùltimo';
+         $config['num_links'] = 3;
          $this->pagination->initialize($config);
          $this->load->view('ticket/verticket', ["resultado"=>$_respuesta[0], "correos"=>$_correos]);
       }
       else{
-         $_respuesta = $this->Ticket_model->verTickets(["fecha"=>"DESC"]);
+         $_respuesta = $this->Ticket_model->verTickets(["fecha"=>"DESC"], $inicio);
          $config['base_url'] = site_url('ticket/verTickets');
          $config['total_rows'] = $_respuesta[1];
          $config['per_page'] = 10;
+         $config['first_tag_open'] = '<div class="w3-btn w3-indigo">';
+         $config['first_tag_close'] = '</div>';
+         $config['last_tag_open'] = '<div class="w3-btn w3-indigo">';
+         $config['last_tag_close'] = '</div>';
+         $config['prev_link'] = '<i class="material-icons">&#xE045;</i>';
+         $config['next_link'] = '<i class="material-icons">&#xE044;</i>';
+         $config['cur_tag_open'] = '<div class="w3-btn w3-white">';
+         $config['cur_tag_close'] = '</div>';
+         $config['num_tag_open'] = '<div class="w3-btn w3-blue">';
+         $config['num_tag_close'] = '</div>';
+         $config['first_link'] = 'Primero';
+         $config['last_link'] = 'Ùltimo';
+         $config["uri_segment"] = 3;
+         $config['num_links'] = 3;
          $this->pagination->initialize($config);
          $this->load->view('ticket/verticket', ["resultado"=>$_respuesta[0], "correos"=>$_correos]);
       }

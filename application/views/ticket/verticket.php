@@ -103,7 +103,9 @@ for($i=0; $i<count($resultado['id_ticket']); $i++){
    echo "<div style='height:1em'></div>";
 }
 
+echo "<div class='w3-center'>";
 echo $this->pagination->create_links();
+echo "</div>";
 $this->load->view('layouts/footer');
 ?>
 

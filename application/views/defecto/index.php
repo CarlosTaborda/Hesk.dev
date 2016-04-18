@@ -16,7 +16,7 @@
     La mesa de ayuda pretende facilitar el manejo y otorgar una herramienta tanto a los empleados de las sucursales a nivel
     nacional para exponer sus incovenientes y problemas asimismo a las personas encargadas de darle solución a esos inconvenientes
     manteniendo un registro completo de todo el proceso de resolución de problemas aumentando así la calidad del servicio y obligando
-    a la respuesta más rápida ademas de la mejor posible ya que esta estará sujeta a posterior revisión y verificación por parte
+    a la respuesta más rápida ademàs de la mejor posible ya que esta estará sujeta a posterior revisión y verificación por parte
     de quien corresponda.
   </p><br/><br/><br/>
   <article id="crear" class="w3-card-2 w3-padding w3-leftbar" style="width: 90%; margin: auto; border-color: #00bcd4 !important">
@@ -29,7 +29,7 @@
         </div>
       </li>
       <li>
-        Se despliega un menú de opciones en donde se elige la opción que se desea, en este caso la opció de crear un ticket.
+        Se despliega un menú de opciones en donde se elige la opción que se desea, en este caso la opción de crear un ticket.
         <div class="w3-center">
           <img src="<?php echo base_url('assets/img/tuto-2.png'); ?>"  />
         </div>
@@ -45,7 +45,7 @@
       </li>
       <li>
         Si se ha diligenciado correctamente el formulario y no hay ningún problema debería aparecer un mensaje como
-        el siguiente indicando que el ticket ha sido generado satisfactoriamente ademas se mostrará un número con el cual
+        el siguiente indicando que el ticket ha sido generado satisfactoriamente ademàs se mostrará un número con el cual
         se podrá hacer el seguimiento al ticket o solicitud.
         <div class="w3-center">
           <img src="<?php echo base_url('assets/img/tuto-4.png'); ?>"  />
@@ -53,7 +53,7 @@
       </li>
 
       <li>
-        Tambien la plataforma enviará un correo electrónico mostrando el código del ticket y el link donde podra ver el estado en
+        También la plataforma enviará un correo electrónico mostrando el código del ticket y el link donde podra ver el estado en
         que se encuentra.
         <div class="w3-center">
           <img src="<?php echo base_url('assets/img/tuto-5.png'); ?>"  />

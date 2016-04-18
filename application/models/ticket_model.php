@@ -62,11 +62,12 @@ class Ticket_model extends CI_Model
       }
    }
 
-   public function verTickets($data){
+   public function verTickets($data, $limInferior=0){
      if($this->session->userdata('rol')=="con"){
         $_contador="email_responsable='" . $this->session->userdata('correo') . "'";
      }
 
+     $this->db->limit(10,$limInferior);
 
       if(!empty($data['estado'])){
          $_respuesta=$this->db->query("SELECT ticket.id_ticket,ticket.nombre,ticket.correo,ticket.estado,ticket.categoria,ticket.id_sucursal,ticket.email_responsable,observacion.fecha,observacion.tema,observacion.id_observacion,observacion.mensaje,observacion.fotografias

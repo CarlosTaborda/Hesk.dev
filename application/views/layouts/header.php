@@ -45,7 +45,7 @@
       <a href='<?php echo site_url("usuario/index"); ?>'>Ingresar</a>
       <div class="w3-dropdown-hover">
       <a href="#">Equipo <i class="material-icons">&#xE313;</i></a>
-      <div class="w3-dropdown-content w3-indigo w3-border w3-card-4">
+      <div class="w3-dropdown-content w3-indigo w3-border w3-card-4" style="width:80% !important">
           <a href="<?php echo site_url('equipo/index'); ?>" class="w3-hover-blue">Crear Equipo</a>
           <a href="<?php echo site_url('equipo/modificar'); ?>" class="w3-hover-blue">Actualizar</a>
           <a href="<?php echo site_url('equipo/addEntrada'); ?>" class="w3-hover-blue">Agregar Entrada</a>
@@ -56,7 +56,7 @@
       <?php if($this->session->userdata('rol')=="adm"){ ?>
       <div class="w3-dropdown-hover" >
       <a href="#">Usuarios <i class="material-icons">&#xE313;</i></a>
-      <div class="w3-dropdown-content w3-indigo w3-border w3-card-4">
+      <div class="w3-dropdown-content w3-indigo w3-border w3-card-4" style="width:80% !important">
           <a href="<?php echo site_url('usuario/accion/habilitar'); ?>" class="w3-hover-blue">Habilitar Usuarios</a>
           <a href="<?php echo site_url('usuario/accion/eliminar'); ?>" class="w3-hover-blue" >Eliminar Usuarios</a>
       </div>
