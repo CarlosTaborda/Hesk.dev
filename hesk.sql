@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.47, for debian-linux-gnu (i686)
+-- MySQL dump 10.13  Distrib 5.5.49, for debian-linux-gnu (i686)
 --
 -- Host: localhost    Database: hesk
 -- ------------------------------------------------------
--- Server version	5.5.47-0+deb8u1
+-- Server version	5.5.49-0+deb8u1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -30,6 +30,7 @@ CREATE TABLE `equipo` (
   `fecha_compra` date DEFAULT NULL,
   `asignado_a` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sucursal` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `estado` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_equipo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -40,7 +41,7 @@ CREATE TABLE `equipo` (
 
 LOCK TABLES `equipo` WRITE;
 /*!40000 ALTER TABLE `equipo` DISABLE KEYS */;
-INSERT INTO `equipo` VALUES ('0',NULL,'No existe equipo','Es una entrada por defecto','2016-03-01','Nadie','102'),('1','EC08903','Dell','12rt','2016-04-14','Angie Cordoba','102'),('10','EC09876','Compaq','gyt34','0000-00-00','Fernando sepulveda','100'),('11','EC09876','Compaq','gyt34','0000-00-00','Erika sepulveda','100'),('2','EC011234','Dell','12rt','2015-12-01','GABRIEL MOSQUERA','103'),('5','EC011234','Dell','12rt','2015-12-01','','100');
+INSERT INTO `equipo` VALUES ('0',NULL,'No existe equipo','Es una entrada por defecto','2016-03-01','Nadie','102',NULL),('1','EC08903','Dell','12rt','2016-04-14','Angie Cordoba','102',NULL),('10','EC09876','Compaq','gyt34','0000-00-00','Fernando sepulveda','100','por despachar'),('11','EC09876','Compaq','gyt34','0000-00-00','Erika sepulveda','100','por despachar'),('2','EC011234','Dell','12rt','2015-12-01','GABRIEL MOSQUERA','103','en reparación pedir'),('5','EC011234','Dell','12rt','2015-12-01','','100','en reparación pedir');
 /*!40000 ALTER TABLE `equipo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,4 +172,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-10 16:41:37
+-- Dump completed on 2016-05-22 21:13:22

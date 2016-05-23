@@ -39,6 +39,12 @@ class Equipo_model extends CI_Model
     return $_seriales['id_equipo'];
   }
 
+  public function obtenerActivosFijos(){
+    $this->db->select("activo_fijo");
+    $_seriales=$this->convertirArray($this->db->get("equipo")->result_array());
+    return $_seriales['activo_fijo'];
+  }
+
   public function actualizar(){
     $_variables=get_object_vars($this);
     foreach($_variables as $key => $valor){
@@ -78,4 +84,11 @@ class Equipo_model extends CI_Model
      $this->db->where("id_equipo",$id_equipo);
      return $this->convertirArray($this->db->get("equipo")->result_array());
    }
+
+
+   public function cambiarEstado($data){
+      $this->db->where("activo_fijo", $data[0]);
+      $this->db->update("equipo", ["estado"=>$data[1]]);
+   }
 }
+

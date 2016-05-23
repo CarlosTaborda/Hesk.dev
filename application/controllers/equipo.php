@@ -121,4 +121,16 @@ class Equipo extends CI_Controller
        $this->load->view("equipo/mostrarEquipo", ["respuesta"=>$_respuesta]);
      }
    }
+
+
+   public function cambiarEstado(){
+      if(empty($this->input->post("estado"))){
+        $this->load->view("equipo/estado", ["activos"=>$this->Equipo_model->obtenerActivosFijos()]);
+      }
+      else{
+         var_dump($this->input->post("estado"));
+         $this->Equipo_model->cambiarEstado($this->input->post("estado"));
+      }
+   }
 }
+

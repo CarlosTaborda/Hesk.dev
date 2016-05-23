@@ -51,6 +51,7 @@
           <a href="<?php echo site_url('equipo/addEntrada'); ?>" class="w3-hover-blue">Agregar Entrada</a>
           <a href="<?php echo site_url('equipo/consultarHojaVida'); ?>" class="w3-hover-blue">Consultar Hoja de Vida</a>
           <a href="<?php echo site_url('equipo/formularioConsultarEquipo');?>" class="w3-hover-blue">Consultar Equipo</a>
+          <a href="<?php echo site_url('equipo/cambiarEstado');?>">Cambiar estado de Equipo</a>
         </div>
       </div>
       <?php if($this->session->userdata('rol')=="adm"){ ?>
@@ -85,3 +86,4 @@
         <div class='w3-center'>
            <img src="<?php echo base_url('assets/img/logo_lagobo.png') ?>" />
         </div>
+

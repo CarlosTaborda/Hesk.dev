@@ -22,7 +22,7 @@
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://192.168.200.6';
+$config['base_url'] = 'http://hesk.dev';
 
 /*
 |--------------------------------------------------------------------------
