@@ -90,5 +90,12 @@ class Equipo_model extends CI_Model
       $this->db->where("activo_fijo", $data[0]);
       $this->db->update("equipo", ["estado"=>$data[1]]);
    }
-}
 
+   public function consultarPorEstado($estado, $final=0){
+     $this->load->library("table");
+     $this->db->limit($final,10);
+     $this->db->select("id_equipo,activo_fijo,marca,modelo,sucursal,estado");
+     $_resultado = $this->db->get("equipo");
+     return [$this->table->generate($_resultado), $_resultado->num_rows()];
+   }
+}

@@ -25,7 +25,7 @@ $this->load->view("layouts/header");
          <div class="w3-col w3-third" style="margin-left: 2em">
             <select class="w3-select w3-border" id="equipo-estado">
                <option>--estado--</option>
-               <option value="por pedir">Por Pedir</option>
+               <option value="por llegar">Por Llegar</option>
                <option value="por despachar">Por Despachar</option>
                <option value="en reparación pedir">En Reparación</option>
                <option value="ninguno">Ninguno</option>
@@ -36,6 +36,9 @@ $this->load->view("layouts/header");
       <div class="w3-center w3-margin">
             <button class="w3-btn w3-indigo" id="equipo_cambiarEstado">Cambiar</button>
       </div>
+
+      <article id="mensaje">
+      </article>
    </blockquote>
 </div>
 
@@ -54,7 +57,10 @@ $this->load->view("layouts/header");
                         estado: [activoFijo, estado]
                      },
                      function(data, status){
-                        console.log(data);
+                        $("#mensaje").html("<h3 class='w3-text-indigo w3-center'>Estado cambiado</h3>");
+                        $("#equipo-activoFijo").val("");
+                        $("#equipo-estado").val("");
+                        setTimeout(function(){ $("#mensaje").html("")}, 4000);
                      }
                   );
                }else{
@@ -68,4 +74,3 @@ $this->load->view("layouts/header");
 <?php
 $this->load->view("layouts/footer");
 ?>
-

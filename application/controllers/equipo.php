@@ -118,6 +118,7 @@ class Equipo extends CI_Controller
        ]);
      }
      else{
+
        $this->load->view("equipo/mostrarEquipo", ["respuesta"=>$_respuesta]);
      }
    }
@@ -132,5 +133,17 @@ class Equipo extends CI_Controller
          $this->Equipo_model->cambiarEstado($this->input->post("estado"));
       }
    }
-}
 
+   public function verEstado(){
+     if(empty($this->input->post("estado"))){
+       $this->load->view("equipo/verEstado");
+     }
+     else{
+       $config['base_url'] = site_url('equipo/verEstado');
+       $config['total_rows'] = 200;
+       $config['per_page'] = 20;
+
+       $this->pagination->initialize($config);
+     }
+   }
+}
