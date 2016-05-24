@@ -139,11 +139,21 @@ class Equipo extends CI_Controller
        $this->load->view("equipo/verEstado");
      }
      else{
+       $_respuesta= $this->Equipo_model->consultarPorEstado($this->input->post("estado", $this->uri->segment(3)));
        $config['base_url'] = site_url('equipo/verEstado');
-       $config['total_rows'] = 200;
-       $config['per_page'] = 20;
-
+       $config['total_rows'] = $_respuesta[1];
+       $config['per_page'] = 10;
        $this->pagination->initialize($config);
+
+       $this->load->view("equipo/verEstado", ["tabla"=>$_respuesta[0]]);
      }
    }
+
+   public function exportarExcel(){
+      $this->load->dbutil();
+      $this->load->helper("download");
+      $_resultado=$this->db->query("select * from equipo");
+      force_download("Equipos_" . date("Y-m-d") . ".csv", $this->dbutil->csv_from_result($_resultado));
+   }
 }
+

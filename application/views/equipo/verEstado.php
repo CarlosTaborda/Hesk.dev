@@ -15,3 +15,20 @@
     </div>
   </blockquote>
 </form>
+
+  <div>
+      <?php
+         if(!empty($tabla)){
+            echo $tabla;
+         }
+      ?>
+  </div>
+
+  <label>
+      <?php echo $this->pagination->create_links(); ?>
+  </label>
+
+<?php
+$this->load->view("layouts/footer");
+?>
+

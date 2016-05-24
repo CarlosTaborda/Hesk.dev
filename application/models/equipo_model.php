@@ -91,11 +91,38 @@ class Equipo_model extends CI_Model
       $this->db->update("equipo", ["estado"=>$data[1]]);
    }
 
-   public function consultarPorEstado($estado, $final=0){
+   public function consultarPorEstado($estado, $comienzo=0){
      $this->load->library("table");
-     $this->db->limit($final,10);
+
+
+      $tmpl = array (
+                    'table_open'          => '<table class="w3-table w3-border w3-hoverable" style="max-width: 90%; margin: auto; margin-top: 3em">',
+
+                    'heading_row_start'   => '<tr>',
+                    'heading_row_end'     => '</tr>',
+                    'heading_cell_start'  => '<th class="w3-cyan">',
+                    'heading_cell_end'    => '</th>',
+
+                    'row_start'           => '<tr>',
+                    'row_end'             => '</tr>',
+                    'cell_start'          => '<td>',
+                    'cell_end'            => '</td>',
+
+                    'row_alt_start'       => '<tr>',
+                    'row_alt_end'         => '</tr>',
+                    'cell_alt_start'      => '<td>',
+                    'cell_alt_end'        => '</td>',
+
+                    'table_close'         => '</table>'
+              );
+     $this->table->set_template($tmpl);
+
+
+     $this->db->limit(10, $comienzo*10);
+     $this->db->like("estado", $estado);
      $this->db->select("id_equipo,activo_fijo,marca,modelo,sucursal,estado");
      $_resultado = $this->db->get("equipo");
      return [$this->table->generate($_resultado), $_resultado->num_rows()];
    }
 }
+
