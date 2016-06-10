@@ -24,7 +24,9 @@ echo form_label("Su correo: ", "ticket-email" , ["class"=>"w3-label"]);
 echo form_input(["type"=>"email",
                  "name"=>"correo",
                  "placeholder"=>"Correo corporativo (ejemplo@lagobo.com.co)",
-                 "class"=>"w3-input w3-border"]);
+                 "class"=>"w3-input w3-border",
+                 "required"=>"true"
+               ]);
 echo "<br/>";
 
 echo form_label("Su sucursal: ","ticket-id_sucursal", ["class"=>"w3-label"]);
@@ -99,4 +101,3 @@ echo form_close();
       }
    );
 </script>
-

@@ -33,7 +33,7 @@ $this->load->view('layouts/header', ["head_files"=>$head_files]);
    <label class="w3-label">Mensaje:</label>
    <textarea name="mensaje" id="observacion-mensaje" required class="w3-input w3-border" style="width: 95%"></textarea>
    <div class="w3-center">
-      <button class="w3-btn w3-indigo w3-margin-8">Aceptar</button>
+      <button class="w3-btn w3-indigo w3-margin-8">Guardar</button>
    </div>
 </form>
 <?php
