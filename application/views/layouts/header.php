@@ -53,16 +53,25 @@
           <a href="<?php echo site_url('equipo/formularioConsultarEquipo');?>" class="w3-hover-blue">Consultar Equipo</a>
           <a href="<?php echo site_url('equipo/cambiarEstado');?>">Cambiar estado de Equipo</a>
           <a href="<?php echo site_url('equipo/verEstado');?>">Ver estado de Equipos</a>
-          <a href="<?php echo site_url('equipo/exportarExcel');?>">Exportar a excel</a>
+        </div>
+      </div>
+
+      <div class="w3-dropdown-hover" >
+        <a href="#">Generar informe <i class="material-icons">&#xE313;</i></a>
+        <div class="w3-dropdown-content w3-indigo w3-border w3-card-4" style="width:80% !important">
+          <a href="<?php echo site_url('equipo/exportarExcel');?>">Exportar equipos a Excel</a>
+          <a href="<?php echo site_url('ticket/generarTickets');?>">Exportar tickets a Excel</a>
         </div>
       </div>
       <?php if($this->session->userdata('rol')=="adm"){ ?>
+
+
       <div class="w3-dropdown-hover" >
-      <a href="#">Usuarios <i class="material-icons">&#xE313;</i></a>
-      <div class="w3-dropdown-content w3-indigo w3-border w3-card-4" style="width:80% !important">
-          <a href="<?php echo site_url('usuario/accion/habilitar'); ?>" class="w3-hover-blue">Habilitar Usuarios</a>
-          <a href="<?php echo site_url('usuario/accion/eliminar'); ?>" class="w3-hover-blue" >Eliminar Usuarios</a>
-      </div>
+        <a href="#">Usuarios <i class="material-icons">&#xE313;</i></a>
+        <div class="w3-dropdown-content w3-indigo w3-border w3-card-4" style="width:80% !important">
+            <a href="<?php echo site_url('usuario/accion/habilitar'); ?>" class="w3-hover-blue">Habilitar Usuarios</a>
+            <a href="<?php echo site_url('usuario/accion/eliminar'); ?>" class="w3-hover-blue" >Eliminar Usuarios</a>
+        </div>
       </div>
       <?php
         }
@@ -88,4 +97,3 @@
         <div class='w3-center'>
            <img src="<?php echo base_url('assets/img/logo_lagobo.png') ?>" />
         </div>
-

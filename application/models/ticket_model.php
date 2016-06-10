@@ -156,4 +156,14 @@ class Ticket_model extends CI_Model
      $_resultado=$this->db->get('usuario')->row_array();
      return $_resultado['correo'];
    }
+
+   public function generarInformeTicket($inicio, $fin){
+     $this->load->dbutil();
+
+     $this->db->select("ticket.id_ticket,ticket.nombre,ticket.correo,ticket.estado,ticket.categoria,ticket.id_sucursal,ticket.email_responsable,observacion.tema,observacion.mensaje");
+     $this->db->from("ticket");
+     $this->db->where("observacion.fecha BETWEEN '". $inicio ."' AND '".$fin."'");
+     $this->db->join("observacion", "ticket.id_ticket=observacion.id_ticket", "inner");
+     return $this->dbutil->csv_from_result($this->db->get());
+   }
 }

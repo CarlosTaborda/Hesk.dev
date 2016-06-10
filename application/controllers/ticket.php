@@ -319,4 +319,13 @@ class Ticket extends CI_Controller
     echo (!empty($_linkImagenes)? $_linkImagenes : "vacío");
     $this->Ticket_model->responderTicket($this->input->post());
   }
+
+  public function generarTickets(){
+    $this->load->view("ticket/generarInformeTicket");
+  }
+
+  public function exportarTickets(){
+    $this->load->helper('download');
+    force_download("tickets_".date("Ymd").".csv", $this->Ticket_model->generarInformeTicket($this->input->post("fecha_inicio"), $this->input->post("fecha_fin")));
+  }
 }
