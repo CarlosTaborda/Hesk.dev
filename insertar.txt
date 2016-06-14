@@ -229,10 +229,6 @@ INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALU
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('121601300908','EC072928','UPS STARTEC','','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('9TDXMS2','EC020483','COMPUTADOR PORTATIL DELL','INSPIRON 14','JULIAN GUTIERREZ','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('678333513','EC040008','CPU DELL','VOSTRO','DIANA PAOLA CORTES','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CNC20251X4','EC030014','MONITOR HP','','ANDRES FELIPE PARRA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('MXL2100POL','EC040014','CPU HP','','ANDRES FELIPE PARRA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('BAUVT0BHH1X7IC','EC050014','TECLADO HP','','ANDRES FELIPE PARRA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('0Y527K','EC050018','TECLADO DELL','','CAROLINA RAMIREZ','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('MMTOCRN00143602B6F8520','EC030846','MONITOR ACER','K202HLQ','YULENY GALVIS','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('MMTOCRN0014360268C8520','EC030847','MONITOR ACER','K202HLQ','JULIAN GUTIERREZ','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('MMTOCRN001436026698520','EC030848','MONITOR ACER','K202HLQ','EDILTON CELIS MARIN','100');
@@ -327,7 +323,6 @@ INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALU
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('SQ7004100095ZF','EC041296','CPU ARGOM','','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('2582AC1-KQSL6MD','EC041297','CPU IBM','SYSTEM X3100 (SERVIDOR)','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('153157C25MJFTDMH','EC041298','CPU LENOVO','','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('LE10113288','EC050845','TECLADO COMPAQ','','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('V1W4X00856','EC060952','IMPRESORA KYOCERA','FS-1040','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('PVAV1116000810','EC050978','TECLADO COMPAQ','','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CN9ABBQOSP','EC060953','IMPRESORA HP','F4480','SERGIO CORREA','100');
@@ -443,14 +438,14 @@ INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALU
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('AJ2003665000011','EC040827','CPU SENTEY','','ROSARIO VALENCIA CHAVEZ','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('WE3A94001264','EC050827','TECLADO GENIUS','','ROSARIO VALENCIA CHAVEZ','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('NOGY034902','EC060949','IMPRESORA EPSON','LX-300','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('HMX493PB0147J','EC020212','COMPUTADOR PORTATIL SAMSUNG','RV415','CARLOS ENRIQUE MONTOYA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('9C040558C','EC020213','COMPUTADOR PORTATIL TOSHIBA','SATELITE C845D','CARLOS ENRIQUE MONTOYA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CNF03868B8','EC020906','COMPUTADOR PORTATIL HP','PAVILON','CARLOS ENRIQUE MONTOYA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('9C042206C','EC020907','COMPUTADOR PORTATIL TOSHIBA','SATELITE C845D','CARLOS ENRIQUE MONTOYA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('NXMORAL03802052C67600','EC021301','COMPUTADOR PORTATIL ACER','','CARLOS ENRIQUE MONTOYA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CM4131V3Y','EC030864','MONITOR HP','','CARLOS ENRIQUE MONTOYA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('MXL428195V','EC040864','CPU HP','','CARLOS ENRIQUE MONTOYA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('BD4HE0CGA6N0O5','EC050864','TECLADO HP','','CARLOS ENRIQUE MONTOYA','100');
+
+
+
+
+
+
+
+
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('22139930341O','EC071183','UPS STARTEC','','CARLOS ENRIQUE MONTOYA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('V1LDF21','EC031247','MONITOR LENOVO','','LUIS MURILLO','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('3CR2200CNZX','EC041247','CPU COMPAQ','','LUIS MURILLO','100');
@@ -489,9 +484,7 @@ INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALU
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('153157C25MJFTDNH','EC040865','CPU LENOVO','','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('1541A5312306974EX','EC050865','TECLADO IENOVO','','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('221309303020','EC071182','UPS STARTEC','','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('ETQ310C002108265404022','EC030856','MONITOR EMACHINE','','MICHAEL OVIEDO','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('807INNG2W575','EC030919','MONITOR LG','FLATRON','MICHAEL OVIEDO','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('YB3CC143621','EC050856','TECLADO GENIUS','','MICHAEL OVIEDO','100');
+
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('221309302908','EC071181','UPS STARTEC','','MICHAEL OVIEDO','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('ETL58148105L0','EC030859','MONITOR BENQ','','CARLOS FELIPE AGUIRRE','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CNC944TPKLPPKL','EC030918','MONITOR COMPAQ','','CARLOS FELIPE AGUIRRE','100');
@@ -574,11 +567,9 @@ INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALU
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('J1913LE1101120478','EC031505','MONITOR JANUS','','DANIEL RIVERA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CNC019NNX5','EC031507','MONITOR ','','DANIEL RIVERA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('3CR93718T4','EC041501','CPU HP','S522019','DANIEL RIVERA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('130706190564','EC041502','CPU JANUS','','DANIEL RIVERA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('120420086851','EC041507','CPU ','','DANIEL RIVERA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('EC051502','EC051502','TECLADO DELUXE','','DANIEL RIVERA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('XX9388168483','EC051504','TECLADO ','','DANIEL RIVERA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('EC051505','EC051505','TECLADO COMPAQ ','','DANIEL RIVERA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('15KBM3COMBOJ108897','EC051507','TECLADO JANUS','','DANIEL RIVERA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('7510BFGB100353A','EC061266','IMPRESORA SAMSUNG','','DANIEL RIVERA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('EC070464','EC070464','UPS STARTEC','','DANIEL RIVERA','100');
@@ -589,7 +580,6 @@ INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALU
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('K-0001505','EC051506','TECLADO ','','GUSTAVO ADOLFO ARIAS','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('BCYSTOACD5TP3R','EC051501','TECLADO HP','','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('LE11932273','EC051503','TECLADO COMPAQ','','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('J1913LE1101120625','EC031508','MONITOR SMS','','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('221309302804','EC070474','UPS STARTEC','','ALEJANDRO ALVAREZ','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('WE150WD06136','EC051508','TECLADO GENIUS','','CARLOS ENRIQUE MONTOYA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('121507300141','EC070463','UPS STARTEC','','SERGIO CORREA','100');
@@ -646,8 +636,8 @@ INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALU
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('61100739','EC040822','CPU XPX','','JUAN DAVID HERNANDEZ','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('BC372DFVBX62ND','EC050822','TECLADO HP','','JUAN DAVID HERNANDEZ','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('43602738K801','EC051318','TECLADO ACER','','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CN-OBXRCV-72872-1AV-K3CM','EC030473','MONITOR DELL','','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('4Q6DHS1','EC040473','CPU DELL','','SERGIO CORREA','100');
+
+
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('03276JA057985','EC030874','MONITOR NOC','MK','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('61085HA221084','EC030871','MONITOR NOC','','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CNC730QPP2','EC030448','MONITOR COMPAQ','WI7G','SERGIO CORREA','100');
@@ -662,51 +652,36 @@ INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALU
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('5CD4333LKM','EC020894','COMPUTADOR PORTATIL HP','HP 14','GERMAN GUSTAVO LOPEZ','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CNC202520T','EC030018','MONITOR HP','','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CNC944PPRW','EC031364','MONITOR COMPAQ','CQ1569','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('403KGFJ95947','EC031501','MONITOR LG','FLATRON','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('11110600004','EC031504','MONITOR JANUS','98CV','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CNC019NNX5','EC031507','MONITOR COMPAQ ','','SERGIO CORREA','100');
+
+
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CNC944PPRV','EC030470','MONITOR COMPAQ','CQ1569','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CNC944PPPB','EC031395','MONITOR COMPAQ','','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('HA15H9NLB01753B','EC031358','MONITOR SAMSUNG','540N','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('061100913','EC040480','CPU XPX','','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CN.ON 300H-64180-136-125L','EC031462','MONITOR DELL','','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('678333513','EC040008','CPU DELL','VOSTRO','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('678333513','EC040008','CPU DELL','VOSTRO','DIEGO LOPEZ','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('0Y527K','EC050018','TECLADO DELL','','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CNC20251X4','EC030014','MONITOR HP','','DIANA PAOLA CORTES','100');
+
+
+
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CNC20251X4','EC030014','MONITOR HP','','NATALIA JARAMILLO','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('MXL2100POL','EC040014','CPU HP','','DIANA PAOLA CORTES','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('MXL2100POL','EC040014','CPU HP','','NATALIA JARAMILLO','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('BAUVT0BHH1X7IC','EC050014','TECLADO HP','','DIANA PAOLA CORTES','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('BAUVT0BHH1X7IC','EC050014','TECLADO HP','','NATALIA JARAMILLO','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('121503303091','EC071341','UPS STARTEC','','MICHAEL OVIEDO','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('ETQ310C002108265404022','EC030856','MONITOR EMACHINE','','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('807INNG2W575','EC030919','MONITOR LG','FLATRON','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('YB3CC143621','EC050856','TECLADO GENIUS','','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('121503303091','EC071341','UPS STARTEC','','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CN-OBXRCV-72872-1AV-K3CM','EC030473','MONITOR DELL','','JUAN DAVID GONZALES','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CN-OBXRCV-72872-1AV-K3CM','EC030473','MONITOR DELL','','VERONICA RAMIREZ','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('4Q6DHS1','EC040473','CPU DELL','','JUAN DAVID GONZALES','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('4Q6DHS1','EC040473','CPU DELL','','VERONICA RAMIREZ','100');
+
+
+
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('J1913LE1101120625','EC031508','MONITOR JANUS','','MICHAEL OVIEDO','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('130706190564','EC041502','CPU JANUS','','MICHAEL OVIEDO','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('LE10113288','EC050845','TECLADO COMPAQ','','MICHAEL OVIEDO','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('806UXNU2R191','EC031516','MONITOR LG','W19345-BN','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('PE16H9NQ808616Y','EC030477','MONITOR SAMSUNG','2000','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('ETQ310C002108265404022','EC030856','MONITOR EMACHINE','','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CNC019NNQ8','EC031502','MONITOR COMPAQ','S1922','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CNC019NNQ8','EC031502','MONITOR COMPAQ','S1922','DIEGO LOPEZ','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CNC019NNQ8','EC031502','MONITOR COMPAQ','S1922','LUIS JOSE CAICEDO','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CNC944PPK-S','EC031503','MONITOR COMPAQ','CQ1569','SERGIO CORREA','100');
+
+
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('MY9BEH602R','EC060955','PLOTER HP (PLOTER)','DESING JET','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('J1913LE1101120478','EC031505','MONITOR JANUS','','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('120420086851','EC041507','CPU JANUS','','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('EC051505','EC051505','TECLADO SENTEY ','','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('15KBM3COMBOJ108897','EC051507','TECLADO JANUS','','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('EF365590','EC061371','SCANNER CANON','DR-2010C','SERGIO CORREA','100');
+
+
+
+
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('EF365590','EC061371','SCANNER CANON','DR-2010C','ANA MILENA LOPEZ','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('FP353669','EC061558','SCANNER CANON','M111081','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('FP353669','EC061558','SCANNER CANON','M111081','ANA MILENA LOPEZ','100');
+
+
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('ST3110914150','EC020908','TABLET VIEW SONIC','CON CARGADOR','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('PVAV1127OO271O','EC050844','TECLADO COMPAQ','','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('LE1018240','EC050854','TECLADO COMPAQ','','SERGIO CORREA','100');
@@ -721,7 +696,6 @@ INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALU
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('807INNG2W575','EC030919','MONITOR LG','FLATRON','JOHAN ANDRES GALEANO','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('PTNC90801210000C39600','EC040856','CPU EMACHINE','','JOHAN ANDRES GALEANO','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('YB3CC143621','EC050856','TECLADO GENIUS','','JOHAN ANDRES GALEANO','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('121503303091','EC071341','UPS STARTEC','','JOHAN ANDRES GALEANO','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('HA17H9NP402027R','EC031357','MONITOR SAMSUNG','740N','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('00045-139-085-246','EC041357','CPU LGB','','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('PVAV1003016577','EC051001','TECLADO COMPAQ','','SERGIO CORREA','100');
@@ -774,7 +748,7 @@ INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALU
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('EC051502','EC051502','TECLADO DELUXE','','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('XX9388168483','EC051504','TECLADO GENIUS ','','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('VL3720FVBX62MV','EC051357','TECLADO HP','KV-7316','SERGIO CORREA','100');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('YB3CC143621','EC050856','TECLADO GENIUS','','SERGIO CORREA','100');
+
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('NXM0RAL034237222827600','EC020886','COMPUTADOR PORTATIL ACER','ASPIRE 2QT','SERGIO CORREA','100');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('FRKE4HA178810','EC030034','MONITOR AOC','','SERGIO CORREA','100');
 
@@ -1124,8 +1098,7 @@ INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALU
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('ec051490','EC051490','TECLADO GENIUS','','JOSE GREGORIO ROJANO','105');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('NUGY144731','EC061529','IMPRESORA EPSON','LX-300+II','YESSICA BERRIO','105');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('ec071576','EC071576','UPS STARTEC','','YESSICA BERRIO','105');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('EF365590','EC061371','SCANNER CANON','DR-2010C','JOSE GREGORIO ROJANO','105');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('FP339105','EC061542','SCANER CANON','DR-C125','JOSE GREGORIO ROJANO','105');
+
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('V1W4Z011160','EC061326','IMPRESORA KYOCERA','FS-1040','AGUSTIN JOSE GONZALEZ','106');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('Q75Y034151','EC061369','IMPRESORA EPSON','LX 350','AGUSTIN JOSE GONZALEZ','106');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('83867HA014816','EC031464','MONITOR AOC','1M760','AGUSTIN JOSE GONZALEZ','106');
@@ -1264,7 +1237,7 @@ INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALU
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CNC944PPPB','EC031395','MONITOR COMPAQ','','ANDERSON BALLESTEROS','113');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('1707902011','EC041395','CPU NEXT','','ANDERSON BALLESTEROS','113');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('EC051395','EC051395','TECLADO UNITEC','','ANDERSON BALLESTEROS','113');
-INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('EF365590','EC061371','SCANNER CANNON','DR 2010','ANDERSON BALLESTEROS','113');
+
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('CNC944PPRV','EC030470','MONITOR COMPAQ','CQ1569','ANDERSON BALLESTEROS','113');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('EC040470','EC040470','CPU SUPER POWER','','ANDERSON BALLESTEROS','113');
 INSERT INTO equipo (id_equipo,activo_fijo,marca,modelo,asignado_a,sucursal) VALUES ('BC3720FVBX62LD','EC050470','TECLADO HP','','ANDERSON BALLESTEROS','113');

@@ -19,7 +19,7 @@
             echo "<label class='w3-label'>ID de Entrada: </label>".$resultado['id_observacion'][$i]."<br/>";
             echo "<label class='w3-label'>Serial del equipo: </label>".$resultado['id_equipo'][$i]."<br/>";
             echo "<label class='w3-label'>Tema:</label><b>".$resultado['tema'][$i]."</b><br/>";
-            echo "<label class='w3-label'>Fecha:</label><b class='w3-text-red'>".$resultado['fecha'][$i]."</b><br/>";
+            echo "<label class='w3-label'>Fecha de modificación:</label><b class='w3-text-red'>".$resultado['fecha'][$i]."</b><br/>";
             echo "<label class='w3-label'>Contenido:</label><br/><p class='w3-padding-medium'>".$resultado['mensaje'][$i]."</p><br/>";
             echo "</div>";
             echo "<div style='height:1em'></div>";
@@ -30,4 +30,3 @@
 <?php
 $this->load->view('layouts/footer');
 ?>
-
