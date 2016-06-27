@@ -28,7 +28,7 @@ $this->load->view('layouts/header',["head_files"=>[
 
 
 
-<div id="id01" class="w3-modal animated flash">
+<div id="id01" class="w3-modal animated fadeInUp">
   <div class="w3-modal-content w3-card-4">
     <article class="w3-container w3-indigo">
       <span onclick="document.getElementById('id01').style.display='none'" class="w3-closebtn">&times;</span>
