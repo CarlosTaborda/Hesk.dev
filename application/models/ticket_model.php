@@ -49,7 +49,7 @@ class Ticket_model extends CI_Model
 
 
    public function consultar($id_ticket){
-      $this->db->select("ticket.id_ticket,ticket.nombre,ticket.correo,ticket.estado,ticket.categoria,ticket.id_sucursal,ticket.email_responsable,observacion.id_observacion,observacion.tema,observacion.mensaje,observacion.fotografias");
+      $this->db->select("ticket.id_ticket,ticket.nombre,ticket.correo,ticket.estado,ticket.categoria,ticket.id_sucursal,ticket.email_responsable,observacion.id_observacion,observacion.tema,observacion.mensaje,observacion.fotografias,observacion.fecha");
       $this->db->from('ticket');
       $this->db->join('observacion', 'ticket.id_ticket=observacion.id_ticket WHERE ticket.estado<>"Resuelto" AND ticket.id_ticket='. $id_ticket , "inner");
       $resultado= $this->db->get();

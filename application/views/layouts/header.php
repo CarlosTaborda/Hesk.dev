@@ -53,6 +53,7 @@
           <a href="<?php echo site_url('equipo/formularioConsultarEquipo');?>" class="w3-hover-blue">Consultar Equipo</a>
           <a href="<?php echo site_url('equipo/cambiarEstado');?>">Cambiar estado de Equipo</a>
           <a href="<?php echo site_url('equipo/verEstado');?>">Ver estado de Equipos</a>
+          <a href="<?php echo site_url('equipo/verConsultarSerial');?>">Consultasr serial</a>
         </div>
       </div>
 

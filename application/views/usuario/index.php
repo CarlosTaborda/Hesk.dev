@@ -120,3 +120,15 @@ echo form_label('Categorías: <br/>', "", ["class"=>"w3-label"]);
    echo form_close();
 ?>
 
+<div>
+    <h2>Reestablesca su contraseña</h2>
+    <label>Correo</label><br/>
+    <input type="email" name="usuario-correo" id="usuario-correo"/>
+    <label>Contraseña:</label><br/>
+    <input type="password"/>
+    <label>Repita su contraseña:</label><br/>
+    <input type="password"/>
+    <blockquote>
+      <button>Reestablecer</button>
+    </blockquote>
+</div>

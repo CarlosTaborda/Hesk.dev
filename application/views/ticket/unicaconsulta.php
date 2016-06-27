@@ -8,6 +8,7 @@
    echo "<b class='w3-text-black'>Correo: </b>" . $ticket['correo'] . "<br/>";
    echo "<b class='w3-text-black'>Estado: </b>" . $ticket['estado'] . "<br/>";
    echo "<b class='w3-text-black'>Categoría: </b>" . $ticket['categoria'] . "<br/>";
+   echo "<b class='w3-text-black'>Fecha de creación: </b>" . $ticket['fecha'] . "<br/>";
    echo "<b class='w3-text-black'>Código de sucursal: </b>" . $ticket['id_sucursal'] . "<br/>";
    echo "<b class='w3-text-black'>Responsable: </b>" . $ticket['email_responsable'] . "<br/>";
    echo "<b class='w3-text-black'>Tema: </b>" . $ticket['tema'] . "<br/>";
@@ -49,4 +50,3 @@ function responder(){
   }
 }
 </script>
-

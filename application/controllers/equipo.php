@@ -155,5 +155,13 @@ class Equipo extends CI_Controller
       $_resultado=$this->db->query("select * from equipo");
       force_download("Equipos_" . date("Y-m-d") . ".csv", $this->dbutil->csv_from_result($_resultado));
    }
-}
 
+   public function verConsultarSerial(){
+     $this->load->view("equipo/verConsultarSerial");
+   }
+
+   public function consultarActivoFijo(){
+     $activoFijo = $this->input->post("activoFijo");
+     echo $this->Equipo_model->consultarActivoFijo($activoFijo);
+   }
+}
